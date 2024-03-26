@@ -1,0 +1,23 @@
+.addwrapper{
+  
+    margin-bottom: 100px;
+}
+
+.bannerback {
+    margin: 20px;
+    padding: 60px 20px 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    padding: 180px 35px 35px 50px;
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 0;
+    background-image: url(https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/buddypress/members/1/cover-image/60b0724fc9a1a-bp-cover-image.jpg);
+}
+
+@media only screen and (max-width: 768px){
+.bannerback {
+    margin: 40px;
+}
+}
