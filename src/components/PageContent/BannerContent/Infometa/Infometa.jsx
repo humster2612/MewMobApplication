@@ -6,17 +6,17 @@ import s from './Infometa.module.css'
 
 const Infometa=()=>{
     return(
-    <ul className='user-meta'>
+    <ul className={s.usermeta}>
 <li>
-    "Posts"
+    Posts :
     <span>4</span>
 </li>
 <li>
-    "Comments"
+    Comments :
     <span>4</span>
 </li>
 <li>
-    "Views"
+    Views :
     <span>1116</span>
 </li>
 

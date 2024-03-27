@@ -13,6 +13,7 @@ const PageContent =()=>{
             
             <BannerContent/>
             <InfoBanner/> <Infometa/>
+            
             </div>
 
        </div>

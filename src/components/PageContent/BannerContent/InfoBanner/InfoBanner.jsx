@@ -1,32 +1,42 @@
-import React from "react"
-import s from './InfoBanner.module.css'
+import React from "react";
+import { FaFacebookF, FaTwitter, FaDribbble, FaBehance, FaYoutube } from 'react-icons/fa';
+import s from './InfoBanner.module.css';
 
-{/* соц сети  компонента*/}
+const InfoBanner = () => {
+  return (
+    <div className={s.mediabody}>
+      <h3 className={s.texttitle}>Rebeca Powel</h3>
+      <div className={s.itemsubtitle}>United State of America</div>
 
-const InfoBanner =() =>{
-    return(
-<div className='media-body'>
-<h3 className='item-title'>Rebeca Powel</h3>
-<div className='item-subtitle'>United State of America</div>
-<ul className='item-social'>
-<li>
-<a href="https://www.facebook.com/" class="bg-fb" target="_blank"><i class="icofont-facebook"></i></a>
-</li>
-<li>
-<a href="https://twitter.com/" class="bg-twitter" target="_blank"><i class="icofont-twitter"></i></a>
-</li>
-<li>
-<a href="https://dribbble.com/" class="bg-dribble" target="_blank"><i class="icofont-dribbble"></i></a>
-</li>
-<li><a href="https://www.behance.net/" class="bg-behance" target="_blank"><i class="icofont-behance"></i></a></li>
-<li>
-<a href="https://www.youtube.com/" class="bg-youtube" target="_blank"><i class="icofont-brand-youtube"></i></a>
-</li>
-</ul>
-
-</div>
-    )
-}
-
+      <ul className={s.itemsocial}>
+        <li>
+          <a href="https://www.facebook.com/" className={s.bgfb} target="_blank" rel="noopener noreferrer">
+            <FaFacebookF />
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" className={s.bgtwitter} target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
+          </a>
+        </li>
+        <li>
+          <a href="https://dribbble.com/" className={s.bgdribble} target="_blank" rel="noopener noreferrer">
+            <FaDribbble />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/" className={s.bgbehance} target="_blank" rel="noopener noreferrer">
+            <FaBehance />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" className={s.bgyoutube} target="_blank" rel="noopener noreferrer">
+            <FaYoutube />
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default InfoBanner;

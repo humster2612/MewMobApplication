@@ -1,0 +1,21 @@
+.usermeta {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0px 20px 0px;
+    display: flex; 
+    justify-content: center;
+    color: white;
+}
+  
+  .usermeta li {
+    margin-right: 20px; 
+  }
+  
+  .usermeta li:last-child {
+    margin-right: 0; 
+  }
+  
+  .usermeta li span {
+    margin-left: 5px; 
+  }
+  
