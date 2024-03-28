@@ -16,12 +16,11 @@
     color: #fff;
 
   }
-
-
-
+  
   
   .itemsocial {
     list-style: none;
+
     padding: 0;
     display: flex;
     justify-content: center;
@@ -32,10 +31,12 @@
   }
   
   .itemsocial li a {
+
     display: inline-block;
     width: 40px;
     height: 40px;
     text-align: center;
+
     line-height: 40px;
     border-radius: 50%;
     transition: background-color 0.3s ease;
@@ -47,22 +48,27 @@
   }
   
   .bgfb {
+
     background-color: #3b5998;
   }
   
   .bgtwitter {
+
     background-color: #55acee;
   }
   
   .bgdribble {
+
     background-color: #ea4c89;
   }
   
   .bgbehance {
+
     background-color: #1769ff;
   }
   
   .bgyoutube {
+
     background-color: #ff0000;
   }
   

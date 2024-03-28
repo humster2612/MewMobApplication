@@ -1,5 +1,13 @@
 #itemnav{
   
-    background-color: aqua;
-
+    background-color: #f1f1f1;
+    margin: 20px;
+    padding: 60px 20px 35px 0px ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    padding: 0px 35px 35px 50px;
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 0;
 }

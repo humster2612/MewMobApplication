@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Navboxcomponent.module.css";
-import BoxLinki from './BoxLinki/BoxLinki';
+import Tabscontainer from './Tabscontainer/Tabscontainer';
 
 
 
@@ -8,9 +8,9 @@ const Navboxcomponent =(props)=>{
     return (
 
     <div id={s.itemnav}>
-       
-    <BoxLinki/>
-
+        <div>
+    <Tabscontainer/>   
+    </div>
 
     </div>
 
