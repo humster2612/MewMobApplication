@@ -1,0 +1,33 @@
+#examples {
+    margin-top: 20px;
+  }
+  
+  #examples h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #examples menu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #examples li {
+    margin-right: 10px;
+  }
+  
+  #examples button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #examples button:hover {
+    background-color: #0056b3;
+  }
+  
