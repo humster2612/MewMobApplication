@@ -5,12 +5,14 @@ button {
   }
   .content-tabs {
     flex-grow : 1;
+ 
   }
 
 .post-header {
     display: flex;
     justify-content: space-between;
     padding: 30px 30px 18px;
+  
   }
   
   .media {
@@ -26,7 +28,7 @@ button {
     position: relative;
     margin-right: 14px;
     padding: 5px;
-  
+ 
   }
   
   
@@ -86,10 +88,12 @@ button {
   
   .content {
     background: white;
-    padding: 20px;
+    /* padding: 20px;
     width: 100%;
     height: 100%;
-    display: none;
+    display: none; */
+    /* background-color: #71728c; */
+
   }
   
   
@@ -102,14 +106,14 @@ button {
     padding: 0 30px 10px;
   }
 
-.post-view .post-body .activity-inner {
+.post-body .activity-inner {
   padding: 0 30px 10px;
 }
 
-.post-view .post-body p.widget-box-status-text {
+.post-body p.widget-box-status-text {
   white-space: pre-wrap;
 }
-.post-view .post-body p {
+.post-body p {
   font-size: 15px;
   color: #71728c;
   line-height: 24px;

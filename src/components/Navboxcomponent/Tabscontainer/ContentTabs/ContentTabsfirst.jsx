@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import "./ContentTabsfirst.css";
 import Examples from "./Examples";
+import ContentFirstImages from "./ContentTabsfirstImages/ContentFirstImages/ContentFirstImages";
+
+
 
 
 
@@ -58,11 +61,14 @@ const ContentTabsfirst =({toggleState}) =>{
 
       </div>
             
-
-                
+          <ContentFirstImages/>
+      
 
       </div>
       </div>
+
+
+
 
 
 

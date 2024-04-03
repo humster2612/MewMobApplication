@@ -1,0 +1,82 @@
+.thumbs-wrap .thumbs-wrap-row {
+    display: flex;
+    display: -ms-flexbox;
+    margin-bottom: 6px;
+}
+
+
+.thumbs-wrap .thumbs-wrap-row.medium .thumbs-wrap-item {
+    width: 50%;
+    height: 240px;
+}
+
+.thumbs-wrap .thumbs-wrap-row .thumbs-wrap-item {
+   
+    margin-right: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.thumbs-wrap .thumbs-wrap-row .thumbs-wrap-item .photo-preview-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+
+.photo-preview {
+    display: block;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+element.style {
+    background: url(https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/mediapress/members/1/185/Status-Photo-1.jpg) center center / cover no-repeat;
+}
+
+
+.photo-preview .photo-preview-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.photo-preview .photo-preview-info {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: rgba(21, 21, 31, .5);
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+}
+
+
+.thumbs-wrap .thumbs-wrap-row .thumbs-wrap-item:last-child {
+    margin-right: 0;
+}
+
+
+.thumbs-wrap .thumbs-wrap-row.medium .thumbs-wrap-item {
+    width: 50%;
+    height: 240px;
+}
+
+
+
+
+

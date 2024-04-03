@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Tabscontainer.css";
 import ContentTabs from "./ContentTabs/ContentTabsfirst";
 
+
+
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);
 
@@ -39,7 +41,7 @@ function Tabs(props) {
       </div>
 
       <ContentTabs toggleState={toggleState} />
-  
+     
 
     </div>
   );
