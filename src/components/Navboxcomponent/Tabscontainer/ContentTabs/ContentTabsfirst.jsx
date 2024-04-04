@@ -5,13 +5,14 @@ import Examples from "./Examples";
 import ContentFirstImages from "./ContentTabsfirstImages/ContentFirstImages/ContentFirstImages";
 
 
-
-
-
 const ContentTabsfirst =({toggleState}) =>{
+  function handleSelect(){
+    console.log('HGellp world -selected!');
+
+  }
     return (
 
-      <div className="content-tabs">
+      <div className="content-tabs"> 
       <div
         className={toggleState === 1 ? "content  active-content" : "content"}
       >
@@ -26,12 +27,14 @@ const ContentTabsfirst =({toggleState}) =>{
             </div>
             <div className="status-info">
               <div className="activity-title">
-                <FaCheck className="check-icon" /> 
-                <a href="https://www.radiustheme.com/demo/wordpress/themes/cirkle/members/admin/">Rebeca Powel</a>
-                <span>
-                  <span className="bp-verified-badge"></span>
-                </span>
-                <span> posted an update</span>
+                <div className="user-info-container">
+                      <FaCheck className="check-icon" /> 
+                      <a href="https://www.radiustheme.com/demo/wordpress/themes/cirkle/members/admin/" className="user-link">Rebeca Powel</a>
+                </div>
+               
+                <span className="second-user-container"> posted an update</span>
+                
+               
               </div>
               <div className="activity-time">3 years ago</div>
             </div>
@@ -53,9 +56,9 @@ const ContentTabsfirst =({toggleState}) =>{
         <section id="examples"> 
        
         <menu>
-              <Examples>Components</Examples>
-              <Examples>Likes</Examples>
-              <Examples>Coments</Examples>
+              <Examples onSelect = {handleSelect}>Components</Examples>
+              <Examples onSelect = {handleSelect}>Likes</Examples>
+              <Examples onSelect = {handleSelect}>Coments</Examples>
         </menu>
         </section>
 

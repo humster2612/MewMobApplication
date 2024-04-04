@@ -30,82 +30,94 @@ button {
     padding: 5px;
  
   }
-  
-  
-  .check-icon {
-    color: white;
-    margin-right: 5px; 
-    margin: 0px 0px 0px 20px;
-    padding:3px;
-    background-color: #759cd8;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  
-  
-  .avatar{
+
+
+  /* contentTabsfirst.css */
+
+/* Styl dla kontenera zawierającego nazwę użytkownika, ikonę i badge weryfikacji */
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 30px; /* Dodaj odstęp od avatara */
+ 
+}
+
+
+.avatar{
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  
+  white-space: wrap;
   
   }
   
+
+/*  Это короче галочка */
+.check-icon {
+  color: white;
+  margin-right: 25px; 
+  margin-left: 20px; 
+  padding: 3px;
+  background-color: #759cd8;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+
+}
+
+/* а это для имени и фамилии чувихи  */
+.user-link {
+  cursor: pointer;
+  color: #2d5be3;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  margin-right: 10px; /* Dodaj odstęp od ikony */
+  white-space: wrap; /* Zapobiega przejściu tekstu na następną linię */
+  overflow: hidden; /* Ukrywa nadmiarowy tekst */
+  text-overflow: ellipsis; /* Wyświetla "..." gdy tekst jest zbyt długi */
+
+}
+
+.user-link:hover {
+  text-decoration: underline; /* Podkreśl link po najechaniu */
+}
+
+/* это короче для posted an update */
+.second-user-container{
   
-  .small, small {
-    font-size: 80%;
-    font-weight: 400;
+  color: #9e9faf;
+  font-size: 13px;
+  margin: 0px 0px 0px 30px;
+
+}
+
+  /* короче это для дива с 3 years ego */
+  .activity-time{ 
+    color: #9e9faf;
+    font-size: 13px;
+    text-transform: capitalize;
+  margin: 0px 0px 0px 30px;
   }
-  a {
-    cursor: pointer;
-    color: #2d5be3;
-    display: inline-block;
-    text-decoration: none;
-    transition: all .3s ease-in-out;
-    padding: 0px 0px 20px 10px;
-  }
-  a {
-    background-color: transparent;
-  }
-  
+
   .post-header .media .activity-avatar .status-info .activity-title {
     font-size: 14px;
   }
  
-  
-  *, :after, :before {
-    box-sizing: inherit;
-  }
-  
-  
-  .activity-time {
-    color: #9e9faf;
-    font-size: 13px;
-    text-transform: capitalize;
-    padding: 0px 0px 0px 60px;
-  }
-  
+  /* это для контейнера для того что бы менять цвет и так далее  контейнер сам где на нем нахолиться вся информация  */
   .content {
     background: white;
-    /* padding: 20px;
+    padding: 20px;
     width: 100%;
     height: 100%;
-    display: none; */
-    /* background-color: #71728c; */
-
+    display: none;
+  
   }
-  
-  
-  
+
   .active-content {
     display: block;
   }
 
-  .post-body {
-    padding: 0 30px 10px;
-  }
-
+ /* а это все для того что бы разместить текст все эти внизу блочки  */
 .post-body .activity-inner {
   padding: 0 30px 10px;
 }
@@ -118,6 +130,7 @@ button {
   color: #71728c;
   line-height: 24px;
   margin-bottom: 20px;
+  word-break: break-word;
 }
 
 
