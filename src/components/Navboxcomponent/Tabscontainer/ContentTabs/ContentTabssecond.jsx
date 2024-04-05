@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import "./ContentTabsfirst.css";
-import Examples from "./Examples";
-import ContentFirstImages from "./ContentTabsfirstImages/ContentFirstImages/ContentFirstImages";
+import "./ContentTabssecond.css";
 import MyPosts from "./MyPosts/MyPosts";
+import Examples from "./Examples";
 
 
-const ContentTabsfirst =({toggleState}) =>{
+const ContentTabssecond =({toggleState}) =>{
   function handleSelect(){
     console.log('HGellp world -selected!');
 
@@ -44,29 +43,18 @@ const ContentTabsfirst =({toggleState}) =>{
           
         </div>
 
-        <div className="post-body">
-        <div className="activity-inner">
-        <p class="widget-box-status-text">
-          Sed ut perspiciatis unde omnis natus error sit voluptatem accusantium
-           der doloremque laudantium Sed ut perspicia tisery. 
-           I’ll be uploading new content every day, improving the quality.</p>
-         
-        </div>
+          <MyPosts/>
 
 
-        <section id="examples"> 
+          <section id="examples"> 
        
         <menu>
-              <Examples onSelect = {handleSelect}>Components</Examples>
-              <Examples onSelect = {handleSelect}>Likes</Examples>
-              <Examples onSelect = {handleSelect}>Coments</Examples>
+      
+              <Examples onSelect = {handleSelect}>Add Post</Examples>
         </menu>
         </section>
 
-      </div>
-            
-          <ContentFirstImages/>
-          
+
       </div>
       </div>
 
@@ -79,4 +67,4 @@ const ContentTabsfirst =({toggleState}) =>{
     )
 };
 
-export default ContentTabsfirst;
+export default ContentTabssecond;

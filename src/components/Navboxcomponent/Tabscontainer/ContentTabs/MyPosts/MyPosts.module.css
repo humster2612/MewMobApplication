@@ -1,0 +1,32 @@
+.content{
+    /* grid-area:c; */
+    background-color: #cfdaec;
+  
+  }
+  
+  .item{
+    color: green;
+  
+  }
+  
+  .postBlock{
+    padding: 10px;
+    padding: 0 30px 10px;
+  }
+
+  .posts{
+    margin-top: 10px;
+    
+  }
+   
+  .item{
+  color: green;
+  
+  }
+
+  .postBlock h3{
+    font-size: 15px;
+
+  }
+  
+  

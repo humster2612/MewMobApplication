@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Tabscontainer.css";
 import ContentTabs from "./ContentTabs/ContentTabsfirst";
+import ContentTabssecond from "./ContentTabs/ContentTabssecond";
 
 
 
@@ -12,6 +13,7 @@ function Tabs(props) {
   };
 
   return (
+    <div>
     <div className="container">
       <div className="block-tabs">
         <button
@@ -42,6 +44,15 @@ function Tabs(props) {
 
       <ContentTabs toggleState={toggleState} />
      
+
+    </div>
+
+    <div className="secondContainer">
+
+    <ContentTabssecond toggleState={toggleState} />
+
+      
+    </div>
 
     </div>
   );
