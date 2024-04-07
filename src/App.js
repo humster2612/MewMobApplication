@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import PageContent from './components/PageContent/PageContent';
-import Navboxcomponent from './components/Navboxcomponent/Navboxcomponent';
+import Header from './components/Menu/MainPage/Header/Header';
+import PageContent from './components/Menu/MainPage/PageContent/PageContent';
+import Navboxcomponent from './components/Menu/MainPage/Navboxcomponent/Navboxcomponent';
 
 
 import './App.css';
