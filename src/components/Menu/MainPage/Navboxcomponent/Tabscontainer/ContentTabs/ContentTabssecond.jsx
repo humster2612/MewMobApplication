@@ -46,13 +46,7 @@ const ContentTabssecond =({toggleState}) =>{
           <MyPosts/>
 
 
-          <section id="examples"> 
-
-        <menu>
-
-              <Examples onSelect = {handleSelect}>Add Post</Examples>
-        </menu>
-         </section>
+        
 
 
       </div>

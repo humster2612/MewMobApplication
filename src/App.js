@@ -12,9 +12,11 @@ import './App.css';
   return (
   
     <div>
+
     <Header/>
     <PageContent/>
     <Navboxcomponent/>
+
 
     </div>
     

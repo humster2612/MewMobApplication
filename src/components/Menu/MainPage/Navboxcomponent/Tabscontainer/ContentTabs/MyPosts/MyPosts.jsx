@@ -1,26 +1,24 @@
 import React from 'react';
 import s from "./MyPosts.module.css";
+import Examples from '../Examples';
 
+const MyPosts = () => {
+    const handleSelect = () => {
+    
+    };
 
-const MyPosts =()=>{
-    return(
+    return (
         <div className={s.postBlock}>
-        <h3>Add a comment</h3>
-        <div>
-            <div>
-            <textarea></textarea>
-            </div>
-          
+        
+        <label className={s.label}>Add your comment</label>
+                {/* <input type="text" /> */}
+                <input className={s.input} type="text" placeholder="Enter your comment" />
+            <button className={s.addButton}>Add Post</button>
+            
+
+         
         </div>
-
-        {/* <div className = {s.posts}>
-            <Post message='Hi,how are you?' likesCount='0' />
-            <Post message="It's my firs project" likesCount ='25'/>
-        </div> */}
-
-    </div>
-
-    )
-
+    );
 };
+
 export default MyPosts;
