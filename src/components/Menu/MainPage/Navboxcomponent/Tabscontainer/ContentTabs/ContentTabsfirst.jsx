@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import "./ContentTabsfirst.css";
-import Examples from "./Examples";
+// import Examples from "./Examples";
 import ContentFirstImages from "./ContentTabsfirstImages/ContentFirstImages/ContentFirstImages";
 import MyPosts from "./MyPosts/MyPosts";
 
@@ -54,14 +54,14 @@ const ContentTabsfirst =({toggleState}) =>{
         </div>
 
 
-        <section id="examples"> 
+        {/* <section id="examples"> 
        
         <menu>
               <Examples onSelect = {handleSelect}>Components</Examples>
               <Examples onSelect = {handleSelect}>Likes</Examples>
               <Examples onSelect = {handleSelect}>Coments</Examples>
         </menu>
-        </section>
+        </section> */}
 
       </div>
             

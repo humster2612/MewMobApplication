@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import "./Examples.css"
+// import React, { useState } from "react";
+// import "./Examples.css"
 
-export default function Examples({children, onSelect}) {
-return(
-<li>
+// export default function Examples({children, onSelect}) {
+// return(
+// <li>
     
-    <button onClick ={onSelect}>{children}</button>
+//     <button onClick ={onSelect}>{children}</button>
 
-</li>
+// </li>
 
-)
-};
+// )
+// };
