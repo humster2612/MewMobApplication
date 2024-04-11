@@ -1,25 +1,24 @@
+// MenuLine.jsx
 import React from 'react';
 import s from './MenuLine.module.css';
-import { NavLink } from 'react-router-dom';
-import MainPage from './MainPage';
+import { Link } from 'react-router-dom';
 
-const Menu = () => {
+const MenuLine = () => {
     return (
         <div className={s.nav}>
             <div className={s.item}>
-                <a href="/mainpage">MainPage</a>
+                <Link to="/">HomePage</Link> 
             </div>
 
             <div className={s.item}>
-                <a href="/aboutus">About us</a>
+                <Link to="/aboutus">About us</Link>
             </div>
 
-            <MainPage/>
-
+            <div className={s.item}>
+                <Link to="/dialogs">DialogPage</Link> 
+            </div>
         </div>
-
     );
 };
 
-export default Menu;
-
+export default MenuLine;

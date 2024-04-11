@@ -1,15 +1,15 @@
-import React from 'react';
+// import React from 'react';
 
 
-const MainPage =(props)=>{
-    return(
-        <div>
+// const MainPage =(props)=>{
+//     return(
+//         <div>
         
-        </div>
+//         </div>
 
 
 
-    )
-};
+//     )
+// };
 
-export default MainPage;
+// export default MainPage;

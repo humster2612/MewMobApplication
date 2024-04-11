@@ -1,27 +1,24 @@
+// App.js
 import React from 'react';
-import Header from './components/Menu/MainPage/Header/Header';
-import PageContent from './components/Menu/MainPage/PageContent/PageContent';
-import Navboxcomponent from './components/Menu/MainPage/Navboxcomponent/Navboxcomponent';
-import Footer from './components/Menu/MainPage/Footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from './components/Menu/HomePage/HomePage'; 
+import DialogPage from './components/Menu/DialogPage/DialogsPage';
 
 
-import './App.css';
-
-
-
-  const App = (props) => {
+const App = () => {
   return (
-  
-    <div>
-
-    <Header/>
-    <PageContent/>
-    <Navboxcomponent/>
-    <Footer/>
-
-    </div>
-    
-
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} /> 
+          <Route path="/dialogs" element={<DialogPage />} /> 
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
