@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -7,7 +6,7 @@ import HomePage from './components/Menu/HomePage/HomePage';
 import DialogPage from './components/Menu/DialogPage/DialogsPage';
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div>
@@ -23,3 +22,4 @@ const App = () => {
 }
 
 export default App;
+

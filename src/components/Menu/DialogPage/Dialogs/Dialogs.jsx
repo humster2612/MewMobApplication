@@ -1,25 +1,11 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import { Link } from 'react-router-dom';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
-const DialogItem =(props) =>{
-    let path = "/dialogs/" + props.id;
-    return (
-
-
-
-        <div className={s.dialog + ' ' + s.active}>
-            <Link to={path}>{props.name}</Link>
-        </div>
-    )
-}
-
-const Message =(props)=>{
-    return <div className ={s.dialog}>{props.message}
-    </div>
-}
 
 const Dialogs = (props) => {
+    
     const dialogsData = [
         {id: '1', name: 'Kubik'},
         {id: '2', name: 'Czubi'},
@@ -34,6 +20,7 @@ const Dialogs = (props) => {
         {id: '4', message: 'Yoooo'}
     ];
 
+
     let dialogsElements = [
         <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>,
         <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>,
@@ -42,7 +29,7 @@ const Dialogs = (props) => {
     ]
 
     return (
-   
+       
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {dialogsElements}
@@ -53,10 +40,7 @@ const Dialogs = (props) => {
                 <Message message={messageData[2].message} id={messageData[2].id}/>
             </div>
         </div>
-    
-
-
-           
+       
     )
 };
 
