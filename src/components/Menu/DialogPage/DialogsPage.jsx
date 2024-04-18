@@ -7,9 +7,10 @@ const DialogPage = (props) => {
         <div>
             <PageContent />
             <h2>Dialog Page</h2>
-            <Dialogs dialogsData={props.dialogsData} messageData={props.messageData} />
+            <Dialogs state={props.state} />
         </div>
     );
 };
+
 
 export default DialogPage;

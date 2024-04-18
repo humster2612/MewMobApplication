@@ -16,7 +16,7 @@ const App = (props) => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} /> 
-          <Route path="/dialogs" element={<DialogPage state={state} />} /> 
+          <Route path="/dialogs" element={<DialogPage state={state} />} />
         </Routes>
         <Footer />
       </div>
