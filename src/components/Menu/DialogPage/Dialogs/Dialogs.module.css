@@ -6,6 +6,7 @@
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.274);
     overflow: hidden; /* Скрываем содержимое, если оно не помещается в контейнер */
+    padding: 0px 0px 30px 0px ;
 }
 
 .dialogs {
@@ -15,8 +16,8 @@
 }
 
 .dialogsItems, .messages {
-    background-color: #f2f2f2; /* Цвет фона */
-    border: 1px solid #ddd; /* Тонкая серая обводка */
+    background-color: #cfdaec; /* Цвет фона */
+    border: 1px solid #094d74; /* Тонкая серая обводка */
     border-radius: 5px;
     padding: 10px;
     margin: 0; /* Убираем отступы между блоками */
@@ -61,6 +62,50 @@
 
 
 .fieldformesssage{
-    padding: 20px 0px 20px 0px ;
+    padding: 20px 0px 0px 0px;
+    display: block;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    text-transform: capitalize;
+  
 
 }
+
+  
+  .input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #094d74;
+    background: #cfdaec;
+    color: #094d74;
+    font-size: 0.9rem;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .addButton {
+    margin-top: auto; 
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #094d74;
+    background: #cfdaec;
+    color: #094d74;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 767px) {
+    .postBlock {
+      padding: 1rem; 
+    }
+  }
+  
