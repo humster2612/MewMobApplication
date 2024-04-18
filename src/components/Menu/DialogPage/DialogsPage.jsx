@@ -5,7 +5,7 @@ import PageContent from '../../PageContent/PageContent';
 const DialogPage = (props) => {
     return (
         <div>
-            <PageContent />
+            {/* <PageContent /> */}
             <h2>Dialog Page</h2>
             <Dialogs state={props.state} />
         </div>

@@ -8,6 +8,7 @@ const Dialogs = (props) => {
     const messagesElements = props.state.messageData.map(m => <Message message={m.message} id={m.id} />)
 
     return (
+        <div className={s.containerthree}>
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {dialogsElements}
@@ -15,6 +16,8 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messagesElements}
             </div>
+        </div>
+
         </div>
     );
 };

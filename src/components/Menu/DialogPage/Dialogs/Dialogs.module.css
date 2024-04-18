@@ -1,24 +1,46 @@
-.dialogs{
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-
-
+.containerthree {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    width: 100%;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    overflow: hidden; /* Скрываем содержимое, если оно не помещается в контейнер */
 }
 
-.dialogsItems{
+.dialogs {
+    display: flex;
+    flex-direction: row; /* Располагаем имена и сообщения по горизонтали */
+    width: 100%;
+}
+
+.dialogsItems, .messages {
+    background-color: #f2f2f2; /* Цвет фона */
+    border: 1px solid #ddd; /* Тонкая серая обводка */
+    border-radius: 5px;
     padding: 10px;
+    margin: 0; /* Убираем отступы между блоками */
+    max-height: 300px; /* Ограничение высоты блоков */
+    overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое не помещается */
+}
+
+.dialogsItems {
+    flex-grow: 1; /* Установим большее значение flex-grow для колонки с именами */
+}
+
+.messages {
+    flex-grow: 2; /* Установим меньшее значение flex-grow для колонки с сообщениями */
 }
 
 .dialogsItems .active {
     color: gold;
-
 }
 
-.dialog{
+.message {
+    background-color: #d5e8d4; /* Цвет фона сообщения */
+    border: 1px solid #c8e5bc; /* Обводка сообщения */
+    border-radius: 5px;
     padding: 10px;
-}
-
-.masseges{
-
-
+    margin: 0; /* Убираем отступы между сообщениями */
+    align-self: flex-start; /* Выравниваем сообщения к верху колонки */
 }
