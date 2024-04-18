@@ -44,3 +44,23 @@
     margin: 0; /* Убираем отступы между сообщениями */
     align-self: flex-start; /* Выравниваем сообщения к верху колонки */
 }
+
+.avatarAndName {
+    display: flex;
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.avatar {
+    width: 40px; /* Задаем ширину аватарки */
+    height: 40px; /* Задаем высоту аватарки */
+    border-radius: 50%; /* Округляем углы, чтобы создать круглую форму */
+    margin-right: 10px; /* Добавляем отступ справа от аватарки */
+}
+
+
+
+
+.fieldformesssage{
+    padding: 20px 0px 20px 0px ;
+
+}
