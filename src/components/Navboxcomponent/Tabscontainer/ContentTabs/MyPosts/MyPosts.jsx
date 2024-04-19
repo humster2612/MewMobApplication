@@ -14,18 +14,15 @@ const AddPost =()=>{
     let text = newPostElement.current.value;
     alert (text);
 
-
-
 };
-
 
     return (
         <div className={s.postBlock}>
         
-        <label className={s.label}>Add your comment</label>
-                {/* <input type="text" /> */}
-                <input className={s.input} type="text" ref={newPostElement} placeholder="Enter your comment" />
-            <button className={s.addButton} onClick={AddPost}>Add Post</button>
+    <label className={s.label}>Add your comment</label>
+          {/* <input type="text" /> */}
+          <input className={s.input} type="text" ref={newPostElement} placeholder="Enter your comment" />
+    <button className={s.addButton} onClick={AddPost}>Add Post</button>
             
 
          

@@ -1,5 +1,8 @@
+/* MenuLine.module.css */
+
 .nav {
     display: flex;
+    flex-direction: row; /* Начальное расположение в линию */
     align-items: end;
     justify-content: end;
     padding: 0px 0px 40px 0px;
@@ -10,11 +13,23 @@
 }
 
 .item:last-child {
-    margin-right: 0px; /* Remove margin from the last item */
+    margin-right: 0px; /* Убрать отступ у последнего элемента */
 }
 
 .item a {
     text-decoration: none;
     color: black;
     font-size: 25px;
+}
+
+@media (max-width: 768px) { /* Медиа-запрос для устройств с шириной экрана до 768px */
+    .nav {
+        flex-direction: column; /* Расположение в колонку при уменьшении экрана */
+        align-items: flex-end; /* Выравнивание элементов слева */
+    }
+
+    .item {
+        margin-right: 0px; /* Убрать отступы между элементами */
+        margin-bottom: 10px; /* Добавить отступ между элементами */
+    }
 }

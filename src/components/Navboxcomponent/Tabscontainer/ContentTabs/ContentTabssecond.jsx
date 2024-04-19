@@ -33,10 +33,10 @@ const ContentTabssecond =({toggleState}) =>{
                 </div>
                
                 <span className="second-user-container"> posted an update</span>
-                
+                <div className="activity-time">3 years ago</div>
                
               </div>
-              <div className="activity-time">3 years ago</div>
+              
             </div>
             
           </div>
@@ -45,6 +45,11 @@ const ContentTabssecond =({toggleState}) =>{
 
           <MyPosts/>
 
+<div className="textik">
+I have great news to share with you all! I've been officially made a game streaming verified partner by Streamy of the http://radiustheme.com/ What does this mean? I'll be uploading new content 
+every day, improving the quality and I'm gonna have
+ access to games a month before the official release.
+</div>
 
         
 

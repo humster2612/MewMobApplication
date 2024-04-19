@@ -1,17 +1,17 @@
 /* MyPosts.module.css */
 
 .postBlock {
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: 0rem auto;
+  padding: 1rem;
   max-width: 25rem;
-  text-align: center;
+  text-align:start;
   border-radius: 6px;
   /* background: linear-gradient(#230736, #301247); */
   box-shadow: 0 0 8px rgba(0,0,0,0.3); 
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 
 .label{
@@ -35,7 +35,7 @@
   margin-bottom: 1rem;
   border-radius: 4px;
   border: 1px solid #493066;
-  background: #493664;
+  /* background: #493664; */
   color: #e5d9f1;
   font-size: 0.9rem;
   font-family: 'Raleway', sans-serif;
@@ -48,8 +48,8 @@
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
   border: 1px solid #493066;
-  background: #493664;
-  color: #e5d9f1;
+  background: #cfdaec;
+  color: #094d74;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   cursor: pointer;
