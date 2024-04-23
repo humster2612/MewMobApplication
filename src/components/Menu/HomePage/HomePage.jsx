@@ -1,18 +1,25 @@
 import React from 'react';
-// import Header from '../../Header/Header';
 import PageContent from '../../PageContent/PageContent';
-import Navboxcomponent from '../../Navboxcomponent/Navboxcomponent';
-// import Footer from '../../Footer/Footer';
+import Tabscontainer from '../../Navboxcomponent/Tabscontainer/Tabscontainer';
+import SideBar from '../../Navboxcomponent/Tabscontainer/ContentTabs/SideBar/SideBar';
+import s from './HomePage.module.css';
+import { AddPost } from '../../../redux/state';
 
 
-const Home =(props)=>{
+const HomePage =(props)=>{
     return(
         <div>
+  <div id={s.itemnav}>
+        <div>
+        <PageContent/>
+            <Tabscontainer AddPost={AddPost} />   
+         <SideBar/>
+    </div>
 
-            {/* <Header/> */}
-            <PageContent/>
-            <Navboxcomponent/>
-            {/* <Footer/> */}
+    </div>
+         
+        
+          
         </div>
 
 
@@ -20,4 +27,4 @@ const Home =(props)=>{
     )
 };
 
-export default Home;
+export default HomePage;

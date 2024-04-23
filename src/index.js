@@ -1,20 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
+import { state, AddPost } from './redux/state';
+
+AddPost("gjerhgjehge");
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-
-    <App state = {state}/>
-  
+  <App state={state} AddPost={AddPost} />
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn moreф: https://bit.ly/CRA-vitals
 reportWebVitals();

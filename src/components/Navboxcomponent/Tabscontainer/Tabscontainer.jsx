@@ -5,7 +5,7 @@ import ContentTabssecond from "./ContentTabs/ContentTabssecond";
 
 
 
-function Tabs(props) {
+function Tabscontainer(props) {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -49,7 +49,7 @@ function Tabs(props) {
 
     <div className="secondContainer">
 
-    <ContentTabssecond toggleState={toggleState} />
+    <ContentTabssecond toggleState={toggleState}  AddPost ={props.AddPost}/>
 
       
     </div>
@@ -58,4 +58,4 @@ function Tabs(props) {
   );
 }
 
-export default Tabs;
+export default Tabscontainer;

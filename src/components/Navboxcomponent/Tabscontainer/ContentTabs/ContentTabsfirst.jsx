@@ -46,7 +46,7 @@ const ContentTabsfirst =({toggleState}) =>{
 
         <div className="post-body">
         <div className="activity-inner">
-        <p class="widget-box-status-text">
+        <p className="widget-box-status-text">
           Sed ut perspiciatis unde omnis natus error sit voluptatem accusantium
            der doloremque laudantium Sed ut perspicia tisery. 
            I’ll be uploading new content every day, improving the quality.</p>

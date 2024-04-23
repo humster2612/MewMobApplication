@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaCheck } from "react-icons/fa";
 import "./ContentTabssecond.css";
 import MyPosts from "./MyPosts/MyPosts";
-import Examples from "./Examples";
+
+import { state, AddPost } from '../../../../redux/state';
 
 
-const ContentTabssecond =({toggleState}) =>{
-  function handleSelect(){
-    console.log('HGellp world -selected!');
 
-  }
-    return (
+const ContentTabssecond = ({ toggleState,AddPost }) => {
+  return (
+
 
       <div className="content-tabs"> 
       <div
@@ -43,7 +42,8 @@ const ContentTabssecond =({toggleState}) =>{
           
         </div>
 
-          <MyPosts/>
+        <MyPosts posts={state.profilePage.posts} AddPost ={AddPost} />
+
 
 <div className="textik">
 I have great news to share with you all! I've been officially made a game streaming verified partner by Streamy of the http://radiustheme.com/ What does this mean? I'll be uploading new content 

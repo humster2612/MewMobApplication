@@ -2,7 +2,7 @@ import React from 'react';
 import "./SideBar.css";
 
 
-const SideBar = () => {
+const SideBar = (props) => {
     return (
         <div className="friends-block">
             <h2 className="block-title">Friends</h2>

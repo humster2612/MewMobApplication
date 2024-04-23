@@ -49,6 +49,7 @@
 .avatarAndName {
     display: flex;
     align-items: center; /* Выравниваем элементы по вертикали */
+    padding: 5px;
 }
 
 .avatar {
