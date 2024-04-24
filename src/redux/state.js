@@ -1,12 +1,15 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
   
-
 
     profilePage:{
         posts:[
                 {id:1,message:'Hi how are you'},
                 {id:2,message:'YOOOOOOOO'}
-        ]
+],
+        newPostText:'YOYOPIKYOPIK'
+
     },
    
 
@@ -30,12 +33,42 @@ diaPage:{
          
 };
 
-let AddPost = (postMessage) => {
+
+window.state=state;
+
+
+
+
+let AddPost = () => {
     let newPost = {
       id: 5,
-      message: postMessage
-    }
+      message: state.profilePage.newPostText
+    };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText='';
+    rerenderEntireTree(state);
+
   }
+
+
+
+// let AddPost = (postMessage) => {
+//     let newPost = {
+//       id: 5,
+//       message: postMessage
+//     };
+//     state.profilePage.posts.push(newPost);
+//     rerenderEntireTree(state);
+
+//   }
+
+
+let updateNewPostText = (newText) =>{
+   
+      state.profilePage.newPostText=newText;
+      rerenderEntireTree(state);
   
-  export { state, AddPost };
+}
+
+  
+  export { state, AddPost, updateNewPostText};

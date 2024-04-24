@@ -3,11 +3,12 @@ import { FaCheck } from "react-icons/fa";
 import "./ContentTabssecond.css";
 import MyPosts from "./MyPosts/MyPosts";
 
-import { state, AddPost } from '../../../../redux/state';
+import {state,AddPost, updateNewPostText } from '../../../../redux/state';
 
 
 
-const ContentTabssecond = ({ toggleState,AddPost }) => {
+const ContentTabssecond = ({ toggleState,AddPost , updateNewPostText }) => {
+
   return (
 
 
@@ -42,7 +43,13 @@ const ContentTabssecond = ({ toggleState,AddPost }) => {
           
         </div>
 
-        <MyPosts posts={state.profilePage.posts} AddPost ={AddPost} />
+        <MyPosts 
+        posts={state.profilePage.posts} 
+        AddPost ={AddPost} 
+        newPostText={state.profilePage.newPostText} 
+        updateNewPostText={updateNewPostText}
+    
+        />
 
 
 <div className="textik">

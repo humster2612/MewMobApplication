@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/Menu/HomePage/HomePage'; 
 import DialogPage from './components/Menu/DialogPage/DialogsPage';
-import { AddPost } from './redux/state';
+import { AddPost, updateNewPostText } from './redux/state';
 
 const App = (props) => {
   return (
@@ -12,7 +12,7 @@ const App = (props) => {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage state={props.state} AddPost={props.AddPost} />} /> 
+          <Route path="/" element={<HomePage profilePage={props.state.profilePage} AddPost={props.AddPost} updateNewPostText={props.updateNewPostText}/>} /> 
           <Route path="/dialogs" element={<DialogPage state={props.state.diaPage} />} />
         </Routes>
         <Footer />

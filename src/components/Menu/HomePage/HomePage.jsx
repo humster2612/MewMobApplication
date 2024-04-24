@@ -12,7 +12,7 @@ const HomePage =(props)=>{
   <div id={s.itemnav}>
         <div>
         <PageContent/>
-            <Tabscontainer AddPost={AddPost} />   
+            <Tabscontainer AddPost={AddPost} updateNewPostText={props.updateNewPostText} />   
          <SideBar/>
     </div>
 

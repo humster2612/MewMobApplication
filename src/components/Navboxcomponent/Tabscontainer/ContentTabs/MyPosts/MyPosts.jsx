@@ -1,6 +1,5 @@
 import React from 'react';
 import s from "./MyPosts.module.css";
-import Examples from '../Examples';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
@@ -13,23 +12,35 @@ const MyPosts = (props) => {
     
 
 const AddPost =()=>{
-    let text = newPostElement.current.value;
-   props.AddPost(text);
+    // let text = newPostElement.current.value;
+   props.AddPost();
+   newPostElement.current.value ='';
+
+
+   
 };
+
+
+let onPostChange = ()=>{
+    let text = newPostElement.current.value; 
+  props.updateNewPostText(text);
+
+}
+
 
     return (
         <div className={s.postBlock}>
         
     <label className={s.label}>Add your comment</label>
           {/* <input type="text" /> */}
-          <input className={s.input} type="text" ref={newPostElement} placeholder="Enter your comment" />
+          <input className={s.input} type="text" onChange={onPostChange} ref={newPostElement} value ={props.newPostText} placeholder="Enter your comment" />
     <button className={s.addButton} onClick={AddPost}>Add Post</button>
             
 
         <div className={s.posts}>
             
            {profilePage}
-           
+
         </div>
         </div>
 
