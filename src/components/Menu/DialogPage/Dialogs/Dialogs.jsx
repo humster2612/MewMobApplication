@@ -2,12 +2,12 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { FaCheck } from "react-icons/fa";
+// import { FaCheck } from "react-icons/fa";
 
 
 
 const Dialogs = (props) => {
-    const dialogsElements = props.state.dialogsData.map(d => (
+    const diaPage = props.state.dialogsData.map(d => (
         <div className={s.dialogItem}>
             <div className={s.avatarAndName}>
                 <img
@@ -25,17 +25,24 @@ const Dialogs = (props) => {
         let NewMessage=React.createRef();
 
 
-    const SendMessage = () =>{
-        let text = NewMessage.current.value;
-        alert (text);
 
-    }
+       let AddMessage =()=>{
+        props.AddMessage();
+        NewMessage.current.value ='';
+
+       }
+
+
+        const SendMessage = () =>{
+            let text = NewMessage.current.value;
+            props.updateNewMessageText(text); 
+        }
 
     return (
         <div className={s.containerthree}> 
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    {dialogsElements}
+                    {diaPage}
                 </div>
                 <div className={s.messages}>
                     {messagesElements}
@@ -44,8 +51,8 @@ const Dialogs = (props) => {
                         <div className={s.fieldformesssage}>
                       
                               
-                              <input className={s.input} type="text" ref={NewMessage} placeholder="Enter your comment" />
-            <button className={s.addButton} onClick={SendMessage}>Send Message</button>
+                              <input className={s.input} type="text" onChange={SendMessage} ref={NewMessage} value={props.newMessageAdd} placeholder="Enter your comment" />
+            <button className={s.addButton} onClick={AddMessage}>Send Message</button>
                         </div>
      
 

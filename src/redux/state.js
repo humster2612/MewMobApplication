@@ -26,17 +26,28 @@ diaPage:{
                     {id: '2', message: 'How are you'},
                     {id: '3', message: 'Yoooo'},
                     {id: '4', message: 'Yoooo'}
-                ]
+                ],
 
+            
+                newMessageAdd :'BUKIBUKIBUKI'
 }
           
-         
 };
 
 
 window.state=state;
 
 
+let AddMessage = ()=>{
+  let newMessage = {
+    id:6,
+    message:state.diaPage.newMessageAdd
+  };
+  state.diaPage.messageData.push(newMessage);
+  state.diaPage.newMessageAdd = '';
+  rerenderEntireTree(state);
+
+}
 
 
 let AddPost = () => {
@@ -49,8 +60,6 @@ let AddPost = () => {
     rerenderEntireTree(state);
 
   }
-
-
 
 // let AddPost = (postMessage) => {
 //     let newPost = {
@@ -70,5 +79,15 @@ let updateNewPostText = (newText) =>{
   
 }
 
+
+let updateNewMessageText = (textmess) =>{
+    state.diaPage.newMessageAdd=textmess;
+    rerenderEntireTree(state);
+  }
+
   
-  export { state, AddPost, updateNewPostText};
+  export { state, AddPost, AddMessage, updateNewPostText,updateNewMessageText};
+
+
+
+ 

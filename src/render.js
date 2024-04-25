@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'; 
 import './index.css';
 import App from './App';
-import { AddPost, updateNewPostText } from './redux/state';
+import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
 
 let root;
 
@@ -9,7 +9,7 @@ export let rerenderEntireTree = (state) => {
   if (!root) {
     root = createRoot(document.getElementById('root'));
   }
-  root.render(<App state={state} AddPost={AddPost} updateNewPostText={updateNewPostText} />);
+  root.render(<App state={state} AddPost={AddPost} updateNewPostText={updateNewPostText} updateNewMessageText={updateNewMessageText} AddMessage={AddMessage} />);
 };
 
 

@@ -4,7 +4,6 @@ import ContentTabs from "./ContentTabs/ContentTabsfirst";
 import ContentTabssecond from "./ContentTabs/ContentTabssecond";
 
 
-
 function Tabscontainer(props) {
   const [toggleState, setToggleState] = useState(1);
 
