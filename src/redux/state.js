@@ -1,4 +1,9 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree=()=>{
+  console.log ("State changed");
+
+}
+
+
 
 let state = {
   
@@ -38,7 +43,7 @@ diaPage:{
 window.state=state;
 
 
-let AddMessage = ()=>{
+const AddMessage = ()=>{
   let newMessage = {
     id:6,
     message:state.diaPage.newMessageAdd
@@ -50,7 +55,7 @@ let AddMessage = ()=>{
 }
 
 
-let AddPost = () => {
+const AddPost = () => {
     let newPost = {
       id: 5,
       message: state.profilePage.newPostText
@@ -72,7 +77,7 @@ let AddPost = () => {
 //   }
 
 
-let updateNewPostText = (newText) =>{
+const updateNewPostText = (newText) =>{
    
       state.profilePage.newPostText=newText;
       rerenderEntireTree(state);
@@ -80,10 +85,18 @@ let updateNewPostText = (newText) =>{
 }
 
 
-let updateNewMessageText = (textmess) =>{
+const updateNewMessageText = (textmess) =>{
     state.diaPage.newMessageAdd=textmess;
     rerenderEntireTree(state);
   }
+
+
+export const subscribe =(observer)=>{
+  rerenderEntireTree=observer;
+  
+}
+
+
 
   
   export { state, AddPost, AddMessage, updateNewPostText,updateNewMessageText};
