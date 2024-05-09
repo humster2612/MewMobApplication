@@ -3,7 +3,10 @@ import reportWebVitals from './reportWebVitals';
 import { state, subscribe } from './redux/state';
 import { createRoot } from 'react-dom/client'; 
 import './index.css';
-import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
+// import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
+import store from './redux/state';
+import React from 'react';
+
 
 let root;
 
@@ -12,10 +15,14 @@ let rerenderEntireTree = (state) => {
     root = createRoot(document.getElementById('root'));
   }
   root.render(<App state={state} 
-    AddPost={AddPost} 
-    updateNewPostText={updateNewPostText}
-    updateNewMessageText={updateNewMessageText}
-    AddMessage={AddMessage} />);
+    dispatch={store.dispatch.bind(store)} 
+
+    
+
+    // updateNewPostText={store.updateNewPostText.bind(store)}
+    // updateNewMessageText={store.updateNewMessageText.bind(store)}
+    // AddMessage={store.AddMessage.bind(store)} 
+    />);
 };
 
 
@@ -23,14 +30,10 @@ let rerenderEntireTree = (state) => {
 // а затем будет использоваться для последующих вызовов. Это должно исправить ошибку и предупреждение,
 //  которые вы получали.
 
-
-
-
-
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
 
 reportWebVitals();
 
 
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);

@@ -60,3 +60,37 @@
     padding: 1rem; /* Reduce padding for smaller screens */
   }
 }
+
+
+
+.commentWrapper {
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 10px; 
+  border: 1px solid #e5d9f1;
+ padding: 5px;
+ width: 100%;
+ border-radius: 10px;
+}
+
+.userIcon {
+ 
+  margin-right: 5px; 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #333; 
+}
+
+.nameUser{
+  font-size: 9px;
+  color: #333;
+  text-transform: capitalize;
+
+}
+
+
+.commentContent {
+  display: flex;
+  flex-direction: column;
+}
