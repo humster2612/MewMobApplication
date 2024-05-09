@@ -3,19 +3,14 @@ import s from './DialogItem.module.css';
 import { Link } from 'react-router-dom';
 
 const DialogItem =(props) =>{
-    let path = "/dialogs/" + props.id;
-
+    let path = `/dialogs?id=${props.id}`;
 
     return (
-
         <div className={s.dialog + ' ' + s.active}>
-           <Link to={`/dialogs/${props.id}`}>{props.name}</Link>
-
+           <Link to={path}>{props.name}</Link>
         </div>
-
-    )
+    );
 };
 
 
 export default DialogItem;
-
