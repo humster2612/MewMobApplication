@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/Menu/HomePage/HomePage'; 
 import DialogPage from './components/Menu/DialogPage/DialogsPage';
-import { AddPost, updateNewPostText, updateNewMessageText, AddMessage } from './redux/state';
+import { AddPost, updateNewPostText, updateNewMessageText, AddMessage } from './redux/store';
 
 const App = (props) => {
   return (

@@ -6,9 +6,6 @@ import HomePageReducer from "./HomePage-reducer";
 // const ADD_MESSAGE = 'ADD-MESSAGE';
 // const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
-
-
-
 let store = {
   _state : {
     profilePage:{

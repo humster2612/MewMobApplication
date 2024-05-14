@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Tabscontainer.css";
 import ContentTabs from "./ContentTabs/ContentTabsfirst";
 import ContentTabssecond from "./ContentTabs/ContentTabssecond";
-import {updateNewPostText, AddPost} from '../../../redux/state';
+import {updateNewPostText, AddPost} from '../../../redux/store';
 
 function Tabscontainer(props) {
   const [toggleState, setToggleState] = useState(1);

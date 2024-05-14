@@ -2,8 +2,8 @@ import React from "react";
 import { FaCheck } from "react-icons/fa";
 import "./ContentTabssecond.css";
 import MyPosts from "./MyPosts/MyPosts";
-import store from '../../../../redux/state';
-import {state,AddPost, updateNewPostText } from '../../../../redux/state';
+import store from '../../../../redux/store';
+import {state,AddPost, updateNewPostText } from '../../../../redux/store';
 
 
 

@@ -1,10 +1,10 @@
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { state, subscribe } from './redux/state';
+import { state, subscribe } from './redux/store';
 import { createRoot } from 'react-dom/client'; 
 import './index.css';
 // import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
-import store from './redux/state';
+import store from './redux/store';
 import React from 'react';
 
 
@@ -37,3 +37,12 @@ reportWebVitals();
 
 
 store.subscribe(rerenderEntireTree);
+
+
+
+store.subscribe(()=>{
+  let state=store.getState();
+  rerenderEntireTree(state);
+
+});
+  
