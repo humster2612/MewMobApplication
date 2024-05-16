@@ -4,30 +4,18 @@ import Tabscontainer from '../../Navboxcomponent/Tabscontainer/Tabscontainer';
 import SideBar from '../../Navboxcomponent/Tabscontainer/ContentTabs/SideBar/SideBar';
 import s from './HomePage.module.css';
 
-// import { AddPost,updateNewPostText } from '../../../redux/state';
-
-
-const HomePage =(props)=>{
-    return(
+const HomePage = (props) => {
+  return (
+    <div>
+      <div id={s.itemnav}>
         <div>
-  <div id={s.itemnav}>
-        <div>
-        <PageContent/>
-            <Tabscontainer dispatch={props.dispatch} />   
-         <SideBar/>
-         
-
-    </div>
-
-    </div>
-         
-        
-          
+          <PageContent />
+          <Tabscontainer store={props.store} />
+          <SideBar />
         </div>
-
-
-
-    )
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;

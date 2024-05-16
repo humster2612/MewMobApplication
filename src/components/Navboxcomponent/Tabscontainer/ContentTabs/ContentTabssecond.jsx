@@ -1,21 +1,14 @@
-import React from "react";
-import { FaCheck } from "react-icons/fa";
-import "./ContentTabssecond.css";
-import MyPosts from "./MyPosts/MyPosts";
-import store from '../../../../redux/store';
-import {state,AddPost, updateNewPostText } from '../../../../redux/store';
+import React from 'react';
+import { FaCheck } from 'react-icons/fa';
+import './ContentTabssecond.css';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
-
-
-const ContentTabssecond = ({ toggleState,AddPost , updateNewPostText }) => {
+const ContentTabssecond = (props) => {
+  const { toggleState, store } = props;
 
   return (
-
-
-      <div className="content-tabs"> 
-      <div
-        className={toggleState === 1 ? "content  active-content" : "content"}
-      >
+    <div className="content-tabs">
+      <div className={toggleState === 1 ? 'content active-content' : 'content'}>
         <div className="post-header">
           <div className="media">
             <div className="activity-avatar">
@@ -28,47 +21,24 @@ const ContentTabssecond = ({ toggleState,AddPost , updateNewPostText }) => {
             <div className="status-info">
               <div className="activity-title">
                 <div className="user-info-container">
-                      <FaCheck className="check-icon" /> 
-                      <a href="https://www.radiustheme.com/demo/wordpress/themes/cirkle/members/admin/" className="user-link">Rebeca Powel</a>
+                  <FaCheck className="check-icon" />
+                  <a href="https://www.radiustheme.com/demo/wordpress/themes/cirkle/members/admin/" className="user-link">Rebeca Powel</a>
                 </div>
-               
-                <span className="second-user-container"> posted an update</span>
+                <span className="second-user-container">posted an update</span>
                 <div className="activity-time">3 years ago</div>
-               
               </div>
-              
             </div>
-            
           </div>
-          
         </div>
 
-        <MyPosts 
-    posts={store._state.profilePage.posts} 
-    dispatch={store.dispatch.bind(store)} 
-    newPostText={store._state.profilePage.newPostText} 
-/>
-
-
-<div className="textik">
-I have great news to share with you all! I've been officially made a game streaming verified partner by Streamy of the http://radiustheme.com/ What does this mean? I'll be uploading new content 
-every day, improving the quality and I'm gonna have
- access to games a month before the official release.
-</div>
-
-        
-
-
+        <MyPostsContainer store={store} />
+        <div className="textik">
+          I have great news to share with you all! I've been officially made a game streaming verified partner by Streamy of the http://radiustheme.com/ What does this mean? I'll be uploading new content 
+          every day, improving the quality and I'm gonna have access to games a month before the official release.
+        </div>
       </div>
-      </div>
-
-
-
-
-
-
-
-    )
+    </div>
+  );
 };
 
 export default ContentTabssecond;

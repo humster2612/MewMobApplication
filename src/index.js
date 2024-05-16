@@ -1,6 +1,6 @@
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { state, subscribe } from './redux/store';
+// import { state, subscribe } from './redux/store';
 import { createRoot } from 'react-dom/client'; 
 import './index.css';
 // import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
@@ -15,9 +15,7 @@ let rerenderEntireTree = (state) => {
     root = createRoot(document.getElementById('root'));
   }
   root.render(<App state={state} 
-    dispatch={store.dispatch.bind(store)} 
-
-    
+    dispatch={store.dispatch.bind(store)} store={store}
 
     // updateNewPostText={store.updateNewPostText.bind(store)}
     // updateNewMessageText={store.updateNewMessageText.bind(store)}

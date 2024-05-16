@@ -1,8 +1,11 @@
 import { combineReducers,configureStore } from 'redux';
+import HomePageReducer from './HomePageReducer'; // Adjust the import path accordingly
+import Dialogsreducer from './Dialogsreducer'; // Adjust the import path accordingly
+
 
 let reducers=combineReducers({
     HomePageReducer:HomePageReducer,
-    Dialogsreducer:Dialogsreducer
+Dialogsreducer:Dialogsreducer
 
 });
 

@@ -1,18 +1,19 @@
 import React from 'react';
-import Dialogs from './Dialogs/Dialogs';
+import DialogsContainer from './Dialogs/DialogsContainer';
 
-const DialogPage = (props) => {
+const DialogsPage = (props) => {
     return (
         <div>
             <h2>Dialog Page</h2>
-            <Dialogs 
-                dialogsData={props.diaPage.dialogsData} 
-                messageData={props.diaPage.messageData} 
-                newMessageAdd={props.diaPage.newMessageAdd}  
-                dispatch={props.dispatch}
+            <DialogsContainer 
+            store={props.store}
+                // dialogsData={props.diaPage.dialogsData} 
+                // messageData={props.diaPage.messageData} 
+                // newMessageAdd={props.diaPage.newMessageAdd}  
+                // dispatch={props.dispatch}
             />
         </div>
     );
 };
 
-export default DialogPage;
+export default DialogsPage;
