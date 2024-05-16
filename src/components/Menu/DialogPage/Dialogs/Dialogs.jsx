@@ -37,6 +37,8 @@ const Dialogs = (props) => {
     // props.dispatch(action);
 
     props.AddMessage();
+    // let text = NewMessage.current.value;
+    // props.updateNewMessage(text);
 
 
     }

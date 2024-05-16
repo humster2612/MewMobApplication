@@ -48,7 +48,7 @@ function Tabscontainer(props) {
 
     <div className="secondContainer">
 
-    <ContentTabssecond toggleState={toggleState}  store={props.store}/>
+    <ContentTabssecond toggleState={toggleState}  />
 
       
     </div>

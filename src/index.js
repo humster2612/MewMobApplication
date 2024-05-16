@@ -6,6 +6,7 @@ import './index.css';
 // import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
 import store from './redux/store';
 import React from 'react';
+import {Provider} from './StoreContext';
 
 
 let root;
@@ -14,13 +15,18 @@ let rerenderEntireTree = (state) => {
   if (!root) {
     root = createRoot(document.getElementById('root'));
   }
-  root.render(<App state={state} 
-    dispatch={store.dispatch.bind(store)} store={store}
+  root.render(
+  <Provider store={store}>
+  <App 
+  // state={state} 
+  //   dispatch={store.dispatch.bind(store)} store={store}
 
     // updateNewPostText={store.updateNewPostText.bind(store)}
     // updateNewMessageText={store.updateNewMessageText.bind(store)}
     // AddMessage={store.AddMessage.bind(store)} 
-    />);
+    />
+    </Provider>
+    );
 };
 
 
@@ -29,11 +35,7 @@ let rerenderEntireTree = (state) => {
 //  которые вы получали.
 
 rerenderEntireTree(store.getState());
-
-
 reportWebVitals();
-
-
 store.subscribe(rerenderEntireTree);
 
 

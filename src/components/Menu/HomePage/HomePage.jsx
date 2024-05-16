@@ -10,7 +10,7 @@ const HomePage = (props) => {
       <div id={s.itemnav}>
         <div>
           <PageContent />
-          <Tabscontainer store={props.store} />
+          <Tabscontainer  />
           <SideBar />
         </div>
       </div>

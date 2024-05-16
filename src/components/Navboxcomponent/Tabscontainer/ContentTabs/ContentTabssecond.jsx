@@ -31,7 +31,7 @@ const ContentTabssecond = (props) => {
           </div>
         </div>
 
-        <MyPostsContainer store={store} />
+        <MyPostsContainer  />
         <div className="textik">
           I have great news to share with you all! I've been officially made a game streaming verified partner by Streamy of the http://radiustheme.com/ What does this mean? I'll be uploading new content 
           every day, improving the quality and I'm gonna have access to games a month before the official release.

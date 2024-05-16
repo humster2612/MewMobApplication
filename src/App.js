@@ -12,8 +12,8 @@ const App = (props) => {
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage store={props.store}/>} /> 
-          <Route path="/dialogs" element={<DialogsContainer store={props.store} />} />
+          <Route path="/" element={<HomePage />} /> 
+          <Route path="/dialogs" element={<DialogsContainer  />} />
         </Routes>
         <Footer />
       </div>
