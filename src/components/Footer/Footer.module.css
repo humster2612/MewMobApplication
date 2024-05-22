@@ -1,4 +1,4 @@
-.footer{
+/* .footer{
     background-color: #759cd8;
     width: 100%;
     height: 100%;
@@ -7,4 +7,74 @@
     width: 100px;
     height: 100px;
     
+} */
+
+
+/* Footer.module.css */
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.columnIcTeFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.iconFooter img {
+    max-width: 100%;
+    height: auto;
+}
+
+.textFooter {
+    margin-top: 10px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.columnSitesFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.columnSitesFooter > div {
+    margin: 10px 0;
+}
+
+/* Стили для больших экранов */
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .columnIcTeFooter {
+        margin-bottom: 0;
+        align-items: flex-start;
+    }
+
+    .textFooter {
+        text-align: left;
+    }
+
+    .columnSitesFooter {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .columnSitesFooter > div {
+        margin: 0 20px;
+    }
+}
+

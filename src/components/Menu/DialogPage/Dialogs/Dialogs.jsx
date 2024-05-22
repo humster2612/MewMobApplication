@@ -1,67 +1,58 @@
-// In Dialogs.js
-import React from 'react';
+import React, { useRef } from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
-
 const Dialogs = (props) => {
+    const state = props.diaPage;
 
-        let state = props.diaPage;
-
-
-    const diaPage = state.dialogsData.map(d => (
+    const dialogsElements = state.dialogsData.map(d => (
         <div className={s.dialogItem} key={d.id}>
             <div className={s.avatarAndName}>
                 <img
                     alt=""
                     className={s.avatar}
-                    src={d.avatarUrl} 
+                    src={d.avatarUrl}
                 />
-                <DialogItem name={d.name} id={d.id} />
+                <DialogItem name={d.name} key={d.id} id={d.id} />
             </div>
         </div>
     ));
 
-    const messagesElements = state.messageData.map(m => <Message message={m.message} id={m.id} key={m.id} />);
+    const messagesElements = state.messageData.map(m => (
+        <Message message={m.message} key={m.id} id={m.id} />
+    ));
 
-    let NewMessage = React.createRef();
+    let newMessageAdd = useRef();
 
-    let AddMessage = () => {
-        // props.dispatch();
-        // NewMessage.current.value = '';
-        // let action=({type:'ADD-MESSAGE'});
-        // props.dispatch(action);
+    const addMessage = () => {
+        props.addMessage();
+    };
 
-    //     let action = { type: 'ADD-MESSAGE' };
-    // props.dispatch(action);
-
-    props.AddMessage();
-    // let text = NewMessage.current.value;
-    // props.updateNewMessage(text);
-
-
-    }
-
-    const SendMessage = () => {
-        let text = NewMessage.current.value;
+    const sendMessage = (e) => {
+        const text = e.target.value;
         props.updateNewMessage(text);
-
-       
-    }
+    };
 
     return (
-        <div className={s.containerthree}> 
+        <div className={s.containerthree}>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    {diaPage}
+                    {dialogsElements}
                 </div>
                 <div className={s.messages}>
                     {messagesElements}
                     <div className={s.postBlock}>
                         <div className={s.fieldformesssage}>
-                            <input className={s.input} type="text" onChange={SendMessage} ref={NewMessage} value={state.newMessageAdd} placeholder="Enter your comment" />
-                            <button className={s.addButton} onClick={AddMessage}>Send Message</button>
+                            <input
+                                className={s.input}
+                                type="text"
+                                onChange={sendMessage}
+                                ref={newMessageAdd}
+                                value={state.newMessageAdd}
+                                placeholder="Enter your comment"
+                            />
+                            <button className={s.addButton} onClick={addMessage}>Send Message</button>
                         </div>
                     </div>
                 </div>

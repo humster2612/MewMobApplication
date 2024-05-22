@@ -1,24 +1,13 @@
-import { combineReducers,configureStore } from 'redux';
-import HomePageReducer from './HomePageReducer'; // Adjust the import path accordingly
-import Dialogsreducer from './Dialogsreducer'; // Adjust the import path accordingly
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import HomePageReducer from './HomePage-reducer';
+import Dialogsreducer from './Dialogs-reducer';
 
-
-let reducers=combineReducers({
-    HomePageReducer:HomePageReducer,
-Dialogsreducer:Dialogsreducer
-
+const rootReducer = combineReducers({
+    profilePage: HomePageReducer,
+    diaPage: Dialogsreducer
 });
 
-
-
-const store = configureStore ({reducer:reducers});
-
+const store = configureStore({ reducer: rootReducer });
 
 export default store;
 
-// combineReducers делаем также
-//  let reducers = combineReducers({...}), 
-// потом вместо createStore пишем:
-//  let store = configureStore({reducer: reducers})т.к.
-//  он подразумевает на вход один уже 
-// объединенный reducer как я понял.

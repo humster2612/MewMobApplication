@@ -6,7 +6,7 @@ import MenuLine from '../Menu/MenuLine';
 const Header =()=>{
     return (
         <header className={s.header}>
-                <img src="https://cdn.icon-icons.com/icons2/2582/PNG/512/menu_icon_153999.png" alt='' />
+                <img src="https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/2021/11/dark_logo.svg" alt='' />
 
                 <MenuLine/>
       

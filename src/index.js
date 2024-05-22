@@ -1,48 +1,18 @@
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-// import { state, subscribe } from './redux/store';
-import { createRoot } from 'react-dom/client'; 
-import './index.css';
-// import { AddPost, updateNewPostText, updateNewMessageText,AddMessage } from './redux/state';
-import store from './redux/store';
 import React from 'react';
-import {Provider} from './StoreContext';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
+import App from './App';
 
+// Найдите корневой элемент в вашем HTML
+const rootElement = document.getElementById('root');
 
-let root;
+// Создайте корень для вашего приложения
+const root = ReactDOM.createRoot(rootElement);
 
-let rerenderEntireTree = (state) => {
-  if (!root) {
-    root = createRoot(document.getElementById('root'));
-  }
-  root.render(
+// Отрендерите ваше приложение с провайдером
+root.render(
   <Provider store={store}>
-  <App 
-  // state={state} 
-  //   dispatch={store.dispatch.bind(store)} store={store}
-
-    // updateNewPostText={store.updateNewPostText.bind(store)}
-    // updateNewMessageText={store.updateNewMessageText.bind(store)}
-    // AddMessage={store.AddMessage.bind(store)} 
-    />
-    </Provider>
-    );
-};
-
-
-// Теперь корень будет создан только один раз при первом вызове rerenderEntireTree, 
-// а затем будет использоваться для последующих вызовов. Это должно исправить ошибку и предупреждение,
-//  которые вы получали.
-
-rerenderEntireTree(store.getState());
-reportWebVitals();
-store.subscribe(rerenderEntireTree);
-
-
-
-store.subscribe(()=>{
-  let state=store.getState();
-  rerenderEntireTree(state);
-
-});
-  
+    <App />
+  </Provider>
+);
