@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import styles from './users.module.css';
+import axios from "axios";
+import userPhoto from '../../assets/images/60af1abf02c8c-bpfull.jpg';
+
 
 let Users = (props) => {
   useEffect(() => {
     if (props.users.length === 0) { // Проверяем, что пользователи еще не загружены
-      props.setUsers([
-        { id: 1, photoUrl: 'https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/avatars/1/60af1abf02c8c-bpfull.jpg', followed: false, fullName: 'Vika', status: 'I am a boss', location: { city: 'Kiev', country: 'Ukraine' } },
-        { id: 2, photoUrl: 'https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/avatars/1/60af1abf02c8c-bpfull.jpg', followed: true, fullName: 'Olha', status: 'I am a boss too', location: { city: 'Kherson', country: 'Ukraine' } },
-        { id: 3, photoUrl: 'https://www.radiustheme.com/demo/wordpress/themes/cirkle/wp-content/uploads/avatars/1/60af1abf02c8c-bpfull.jpg', followed: true, fullName: 'SAsha', status: 'I am a boss too', location: { city: 'Kherson', country: 'Ukraine' } },
-      ]);
+     
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+        .then(response =>{
+        props.setUsers(response.data.items);        
+      } )
     }
   }, []); // Пустой массив зависимостей означает, что useEffect вызывается только при монтировании компонента
 
@@ -18,7 +21,7 @@ let Users = (props) => {
         <div key={u.id}>
           <span>
             <div>
-              <img src={u.photoUrl} className={styles.userPhoto} />
+              <img src={u.photos.small !=null ? u.photos.small:userPhoto} className={styles.userPhoto} />
             </div>
             <div>
               {u.followed
@@ -32,8 +35,8 @@ let Users = (props) => {
               <div>{u.status}</div>
             </span>
             <span>
-              <div>{u.location.country}</div>
-              <div>{u.location.city}</div>
+              <div>{"u.location.country"}</div>
+              <div>{"u.location.city"}</div>
             </span>
           </span>
         </div>
