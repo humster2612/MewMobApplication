@@ -17,6 +17,10 @@ const MenuLine = () => {
             <div className={s.item}>
                 <Link to="/dialogs">DialogPage</Link> 
             </div>
+
+            <div className={s.item}>
+                <Link to="/users">Users</Link> 
+            </div>
         </div>
     );
 };
