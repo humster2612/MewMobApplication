@@ -1,66 +1,70 @@
-//это если что классовая компонента 
-import React, { useEffect } from "react";
+import React from "react";
 import styles from './users.module.css';
-import axios from "axios";
 import userPhoto from '../../assets/images/60af1abf02c8c-bpfull.jpg';
 
-class Users extends React.Component{
-    componentDidMount(){
-      axios.get("https://social-network.samuraijs.com/api/1.0/users")
-      .then(response =>{
-      this.props.setUsers(response.data.items);        
-      })
+const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, follow, unfollow }) => {
+  const pagesCount = Math.ceil(totalUsersCount / pageSize);
+  let pages = [];
+
+  if (pagesCount <= 11) {
+    pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
+  } else {
+    if (currentPage <= 6) {
+      pages = [...Array.from({ length: 11 }, (_, i) => i + 1)];
+    } else if (currentPage > pagesCount - 6) {
+      pages = [...Array.from({ length: 11 }, (_, i) => pagesCount - 10 + i)];
+    } else {
+      pages = [...Array.from({ length: 11 }, (_, i) => currentPage - 5 + i)];
     }
-    
-    render(){
-      return (
-          <div>
-      
-          <button onClick={this.getUsers}>Get Users</button>
-      
-            {this.props.users && this.props.users.map(u => (
-              <div key={u.id}>
-                <span>
-                  <div>
-                    <img src={u.photos.small !=null ? u.photos.small:userPhoto} className={styles.userPhoto} />
-                  </div>
-                  <div>
-                    {u.followed
-                      ? <button onClick={() => { this.props.unfollow(u.id) }}>Unfollow</button>
-                      : <button onClick={() => { this.props.follow(u.id) }}>Follow</button>}
-                  </div>
-                </span>
-                <span>
-                  <span>
-                    <div>{u.fullName}</div>
-                    <div>{u.status}</div>
-                  </span>
-                  <span>
-                    <div>{"u.location.country"}</div>
-                    <div>{"u.location.city"}</div>
-                  </span>
-                </span>
-              </div>
-            ))}
-          </div>
-      )
   }
-}
-                
 
-      
-       
-
-
-
-// Пустой массив зависимостей означает, что useEffect вызывается только при монтировании компонента
-
-// useEffect(() => {
-// getUsers();
-// }, []);
-
-
-    
-
+  return (
+    <div>
+      <div>
+        {currentPage > 1 && <span onClick={() => onPageChanged(currentPage - 1)}>Prev</span>}
+        {pages.map(p => (
+          <span
+            key={p}
+            className={currentPage === p ? styles.selectedPage : undefined}
+            onClick={(e) => onPageChanged(p)}
+          >
+            {p}
+          </span>
+        ))}
+        {currentPage < pagesCount && <span onClick={() => onPageChanged(currentPage + 1)}>Next</span>}
+      </div>
+      {users.map(u => (
+        <div key={u.id}>
+          <span>
+            <div>
+              <img src={u.photos.small ? u.photos.small : userPhoto} className={styles.userPhoto} />
+            </div>
+            <div>
+              {u.followed ? (
+                <button onClick={() => unfollow(u.id)}>Unfollow</button>
+              ) : (
+                <button onClick={() => follow(u.id)}>Follow</button>
+              )}
+            </div>
+          </span>
+          <span>
+            <span>
+              <div>{u.name}</div>
+              <div>{u.status}</div>
+            </span>
+            <span>
+              {u.location && (
+                <React.Fragment>
+                  <div>{u.location.country}</div>
+                  <div>{u.location.city}</div>
+                </React.Fragment>
+              )}
+            </span>
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Users;
