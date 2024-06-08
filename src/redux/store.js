@@ -1,5 +1,5 @@
 import Dialogsreducer from "./Dialogs-reducer";
-import HomePageReducer from "./HomePage-reducer";
+import ProfileReducer from "./Profile-reducer";
 
 // const ADD_POST = 'ADD-POST';
 // const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -76,7 +76,7 @@ let store = {
 
   dispatch(action){
 
-    this._state.profilePage=HomePageReducer(this._state.profilePage,action);
+    this._state.profilePage=ProfileReducer(this._state.profilePage,action);
     this._state.diaPage=Dialogsreducer(this._state.diaPage,action);
     
     this._callSubscriber(this._state);

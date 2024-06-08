@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './users.module.css';
 import userPhoto from '../../assets/images/60af1abf02c8c-bpfull.jpg';
+import { NavLink } from "react-router-dom";
 
 const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, follow, unfollow }) => {
   const pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -17,7 +18,6 @@ const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, f
       pages = [...Array.from({ length: 11 }, (_, i) => currentPage - 5 + i)];
     }
   }
-
   return (
     <div>
       <div>
@@ -33,11 +33,13 @@ const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, f
         ))}
         {currentPage < pagesCount && <span onClick={() => onPageChanged(currentPage + 1)}>Next</span>}
       </div>
-      {users.map(u => (
+      {users.map( u => (
         <div key={u.id}>
           <span>
             <div>
+              <NavLink to={'/ '+u.id} >
               <img src={u.photos.small ? u.photos.small : userPhoto} className={styles.userPhoto} />
+              </NavLink>
             </div>
             <div>
               {u.followed ? (
@@ -68,3 +70,4 @@ const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, f
 };
 
 export default Users;
+

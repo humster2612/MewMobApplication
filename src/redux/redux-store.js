@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import HomePageReducer from './HomePage-reducer';
+import HomePageReducer from './Profile-reducer';
 import Dialogsreducer from './Dialogs-reducer';
 import UsersReducer from './Users-reducer';
 

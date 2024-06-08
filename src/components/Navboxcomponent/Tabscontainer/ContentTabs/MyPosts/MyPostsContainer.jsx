@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../../redux/HomePage-reducer';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../../redux/Profile-reducer';
 import MyPosts from './MyPosts'; // Импортируйте компонент MyPosts
 
 const mapStateToProps = (state) => {

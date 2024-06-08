@@ -2,14 +2,15 @@ import React from 'react';
 import PageContent from '../../PageContent/PageContent';
 import Tabscontainer from '../../Navboxcomponent/Tabscontainer/Tabscontainer';
 import SideBar from '../../Navboxcomponent/Tabscontainer/ContentTabs/SideBar/SideBar';
-import s from './HomePage.module.css';
+import s from './Profile.module.css';
 
-const HomePage = (props) => {
+const Profile = (props) => {
   return (
     <div>
       <div id={s.itemnav}>
         <div>
-          <PageContent />
+          <PageContent   profile={props.profile} />
+        
           <Tabscontainer  />
           <SideBar />
         </div>
@@ -18,4 +19,4 @@ const HomePage = (props) => {
   );
 };
 
-export default HomePage;
+export default Profile;

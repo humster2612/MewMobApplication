@@ -3,23 +3,25 @@ import s from './PageContent.module.css';
 import BannerContent from './BannerContent/BannerContent';
 import InfoBanner from './BannerContent/InfoBanner/InfoBanner';
 import Infometa from './BannerContent/Infometa/Infometa';
+import Preloader from '../Coomon/Preloader/Preloader';
 
+const PageContent = (props) => {
+    if (!props.profile || !props.profile.photos || !props.profile.photos.large) {
+        return <Preloader />;
+    }
 
-const PageContent =()=>{
     return (
-       <div className={s.addwrapper}>           
-           
+        <div className={s.addwrapper}>
             <div className={s.bannerback}>
-            
-            <BannerContent/>
-            <InfoBanner/> <Infometa/>
-            
+                
+                <BannerContent />
+                <InfoBanner />
+                <Infometa />
+
             </div>
-
-       </div>
-
-       
-    )
+            <img src={props.profile.photos.large}  />
+        </div>
+    );
 };
 
 export default PageContent;
