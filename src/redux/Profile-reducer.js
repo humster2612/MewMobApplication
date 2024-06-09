@@ -13,6 +13,8 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
+    console.log('profileReducer state:', state);
+    console.log('profileReducer action:', action);
     switch (action.type) {
         case ADD_POST:
             return {
@@ -27,12 +29,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: action.newText
             };
-
-        case SET_USERS_PROFILE:{
-                return {...state, profile:action.profile}
-        }
-        default:
-            return state;
+            case SET_USERS_PROFILE:
+                return { ...state, profile: action.profile };  default:
+                    return state;
+        
+              
     }
 };
 

@@ -3,6 +3,8 @@ import { FaFacebookF, FaTwitter, FaDribbble, FaBehance, FaYoutube } from 'react-
 import s from './InfoBanner.module.css';
 
 const InfoBanner = () => {
+  console.log('Rendering InfoBanner');
+
   return (
     <div className={s.mediabody}>
       <h3 className={s.texttitle}>Rebeca Powel</h3>

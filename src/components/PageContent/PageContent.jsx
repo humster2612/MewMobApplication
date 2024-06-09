@@ -6,22 +6,22 @@ import Infometa from './BannerContent/Infometa/Infometa';
 import Preloader from '../Coomon/Preloader/Preloader';
 
 const PageContent = (props) => {
-    if (!props.profile || !props.profile.photos || !props.profile.photos.large) {
-        return <Preloader />;
-    }
+  console.log('PageContent props:', props);
 
-    return (
-        <div className={s.addwrapper}>
-            <div className={s.bannerback}>
-                
-                <BannerContent />
-                <InfoBanner />
-                <Infometa />
+  if (!props.profile || !props.profile.photos || !props.profile.photos.large) {
+    return <Preloader />;
+  }
 
-            </div>
-            <img src={props.profile.photos.large}  />
-        </div>
-    );
+  return (
+    <div className={s.addwrapper}>
+      <div className={s.bannerback}>
+        <BannerContent />
+        <InfoBanner />
+        <Infometa />
+      </div>
+      <img src={props.profile.photos.large} alt="Profile" />
+    </div>
+  );
 };
 
 export default PageContent;

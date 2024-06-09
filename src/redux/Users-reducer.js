@@ -27,11 +27,10 @@ const UsersReducer = (state = initialState, action) => {
         ...state,
         users: state.users.map(u => u.id === action.userId ? { ...u, followed: false } : u)
       };
-    case SET_USERS:
-      return {
-        ...state,
-        users: action.users
-      };
+      case SET_USERS:
+        return { ...state, users: action.users 
+        };
+
     case SET_CURRENT_PAGE:
       return {
         ...state,

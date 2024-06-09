@@ -5,13 +5,13 @@ import SideBar from '../../Navboxcomponent/Tabscontainer/ContentTabs/SideBar/Sid
 import s from './Profile.module.css';
 
 const Profile = (props) => {
+  console.log('Profile props:', props);
   return (
     <div>
       <div id={s.itemnav}>
         <div>
-          <PageContent   profile={props.profile} />
-        
-          <Tabscontainer  />
+          <PageContent profile={props.profile} />
+          <Tabscontainer />
           <SideBar />
         </div>
       </div>
