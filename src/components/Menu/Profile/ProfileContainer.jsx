@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Remove withRouter
 import { connect } from 'react-redux';
 import { setUsersProfile } from '../../../redux/Profile-reducer';
 import Profile from '../Profile/Profile';
 import axios from 'axios';
+import { withAuthRedirect } from '../../../Hoc/withAuthRedirect';
 
 const ProfileContainer = (props) => {
-  const { userId } = useParams();
+  const { userId } = useParams(); // Use useParams hook to get route parameters
 
   useEffect(() => {
     console.log("Fetching profile for userId:", userId);
-    props.setUsersProfile(null); // Сбрасываем профиль при изменении userId
+    props.setUsersProfile(null);
     if (userId) {
       axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
         .then(response => {
@@ -28,8 +29,11 @@ const ProfileContainer = (props) => {
   );
 };
 
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+
 const mapStateToProps = (state) => ({
-  profile: state.profilePage.profile
+  profile: state.profilePage.profile,
+ 
 });
 
-export default connect(mapStateToProps, { setUsersProfile })(ProfileContainer);
+export default connect(mapStateToProps, { setUsersProfile })(AuthRedirectComponent);

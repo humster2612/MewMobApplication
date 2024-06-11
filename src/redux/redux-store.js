@@ -1,4 +1,6 @@
+// redux/redux-store.js
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { thunk } from 'redux-thunk';  // Импортируем thunk правильно
 import HomePageReducer from './Profile-reducer';
 import Dialogsreducer from './Dialogs-reducer';
 import UsersReducer from './Users-reducer';
@@ -7,11 +9,13 @@ import authReducer from './auth-reducer';
 const rootReducer = combineReducers({
     profilePage: HomePageReducer,
     diaPage: Dialogsreducer,
-    usersPage:UsersReducer,
-    auth:authReducer
+    usersPage: UsersReducer,
+    auth: authReducer
 });
 
-const reduxstore = configureStore({ reducer: rootReducer });
+const store = configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk)
+});
 
-export default reduxstore;
-
+export default store;
