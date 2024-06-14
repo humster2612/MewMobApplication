@@ -27,51 +27,54 @@ const Users = ({ totalUsersCount, pageSize, currentPage, onPageChanged, users, f
           <span
             key={p}
             className={currentPage === p ? styles.selectedPage : styles.pageNumber}
-            onClick={() => onPageChanged(p)}
-          >
+            onClick={() => onPageChanged(p)}>
             {p}
           </span>
         ))}
         {currentPage < pagesCount && <span onClick={() => onPageChanged(currentPage + 1)} className={styles.pageNav}>Next</span>}
       </div>
-      {users.map(u => (
-        <div key={u.id}>
-          <span>
-            <div>
-              <NavLink to={'/profile/' + u.id} >
-                <img src={u.photos.small ? u.photos.small : userPhoto} className={styles.userPhoto} alt="user" />
-              </NavLink>
-            </div>
-            <div>
-              {u.followed ? (
-                <button 
-                  disabled={followingInProgress.some(id => id === u.id)} 
-                  onClick={() => unfollow(u.id)}
-                >Unfollow</button>
-              ) : (
-                <button 
-                  disabled={followingInProgress.some(id => id === u.id)} 
-                  onClick={() => follow(u.id)}
-                >Follow</button>
-              )}
-            </div>
-          </span>
-          <span>
+      <div className={styles.usersContainer}>
+        {users.map(u => (
+          <div key={u.id} className={styles.userCard}>
             <span>
-              <div>{u.name}</div>
-              <div>{u.status}</div>
+              <div>
+                <NavLink to={'/profile/' + u.id}>
+                  <img src={u.photos.small ? u.photos.small : userPhoto} className={styles.userPhoto} alt="user" />
+                </NavLink>
+              </div>
+              <div>
+                {u.followed ? (
+                  <button 
+                    disabled={followingInProgress.some(id => id === u.id)} 
+                    onClick={() => unfollow(u.id)}
+                    className={styles.buttonUnfollow}
+                  >Unfollow</button>
+                ) : (
+                  <button 
+                    disabled={followingInProgress.some(id => id === u.id)} 
+                    onClick={() => follow(u.id)}
+                    className={styles.buttonFollow}
+                  >Follow</button>
+                )}
+              </div>
             </span>
-            <span>
-              {u.location && (
-                <React.Fragment>
-                  <div>{u.location.country}</div>
-                  <div>{u.location.city}</div>
-                </React.Fragment>
-              )}
+            <span className={styles.userInfo}>
+              <span>
+                <div className={styles.userName}>{u.name}</div>
+                <div className={styles.userStatus}>{u.status}</div>
+              </span>
+              <span>
+                {u.location && (
+                  <div className={styles.userLocation}>
+                    <div>{u.location.country}</div>
+                    <div>{u.location.city}</div>
+                  </div>
+                )}
+              </span>
             </span>
-          </span>
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

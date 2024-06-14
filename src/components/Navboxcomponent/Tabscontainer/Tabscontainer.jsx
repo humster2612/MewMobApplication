@@ -3,7 +3,7 @@ import "./Tabscontainer.css";
 import ContentTabs from "./ContentTabs/ContentTabsfirst";
 import ContentTabssecond from "./ContentTabs/ContentTabssecond";
 import {updateNewPostText, AddPost} from '../../../redux/store';
-
+import ContentTabsPhotos from "./ContentTabs/ContentTabsPhotos";
 function Tabscontainer(props) {
   const [toggleState, setToggleState] = useState(1);
 
@@ -51,6 +51,12 @@ function Tabscontainer(props) {
     <ContentTabssecond toggleState={toggleState}  />
 
       
+    </div>
+
+    <div>
+      
+      <ContentTabsPhotos toggleState={toggleState}/>
+    
     </div>
 
     </div>

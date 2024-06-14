@@ -4,6 +4,7 @@ import { follow, unfollow, getUsers, setCurrentPage, togleFollowingProgress } fr
 import Users from './Users';
 import Preloader from '../Coomon/Preloader/Preloader';
 import { withAuthRedirect } from '../../Hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 class UsersAPIComponent extends Component {
     componentDidMount() {
@@ -13,7 +14,7 @@ class UsersAPIComponent extends Component {
 
     onPageChanged = (pageNumber) => {
         const { pageSize } = this.props;
-        this.props.setCurrentPage(pageNumber); // Обновляем текущую страницу
+        this.props.setCurrentPage(pageNumber); 
         this.props.getUsers(pageNumber, pageSize);
     };
 
@@ -48,12 +49,15 @@ const mapStateToProps = (state) => {
     };
 };
 
+export default compose (
+    withAuthRedirect,
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        getUsers,
+        setCurrentPage,
+        togleFollowingProgress,
+    }) )(UsersAPIComponent);
 
-export default  withAuthRedirect(connect(mapStateToProps, {
-    follow,
-    unfollow,
-    getUsers,
-    setCurrentPage,
-    togleFollowingProgress
-})(UsersAPIComponent));
-//доделать  с юсерами что бы на логине из не было видно 
+    
+

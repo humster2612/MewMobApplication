@@ -6,19 +6,20 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Menu/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginPage from './components/Login/Login';
+import PageContent from './components/PageContent/PageContent';
 const App = () => {
   return (
     <BrowserRouter>
       <div>
         <HeaderContainer />
         <Routes>
+       
+
           <Route path="/" element={<ProfileContainer />} />
           <Route path="/profile/:userId" element={<ProfileContainer />} />
           <Route path="/dialogs" element={<DialogsContainer />} />
           <Route path="/users" element={<UsersContainer />} />
           <Route path="/login" element={<LoginPage />} />
-
-        
         </Routes>
         <Footer />
       </div>

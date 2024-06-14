@@ -1,11 +1,103 @@
-/* users.module.css */
-.userPhoto {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.usersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
 }
 
+.userCard {
+    flex: 1 1 calc(33.333% - 40px); 
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-.selectedPage{
+.userCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.userPhoto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.userInfo {
+    text-align: center;
+}
+
+.userName {
     font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.userStatus {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.userLocation {
+    color: #666;
+    margin-top: 10px;
+}
+
+.buttonFollow, .buttonUnfollow {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.buttonFollow {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonUnfollow {
+    background-color: #f44336;
+    color: white;
+}
+
+.buttonFollow:disabled, .buttonUnfollow:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pageNav, .pageNumber {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.selectedPage {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.pageNav {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+@media (max-width: 1024px) {
+    .userCard {
+        flex: 1 1 calc(50% - 40px); 
+    }
+}
+
+@media (max-width: 600px) {
+    .userCard {
+        flex: 1 1 100%; 
+    }
 }

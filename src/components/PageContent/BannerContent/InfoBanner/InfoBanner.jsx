@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { FaFacebookF, FaTwitter, FaDribbble, FaBehance, FaYoutube } from 'react-icons/fa';
 import s from './InfoBanner.module.css';
 

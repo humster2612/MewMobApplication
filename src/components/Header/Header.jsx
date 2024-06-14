@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './Header.module.css';
 import MenuLine from '../Menu/MenuLine';
-// import Dialogs from '../Menu/DialogsBar/Dialogs';
 import { NavLink } from 'react-router-dom';
 
 const Header =(props)=>{
