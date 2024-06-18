@@ -1,40 +1,51 @@
 import React from 'react';
-import s from './PageContent.module.css';
-import BannerContent from './BannerContent/BannerContent';
-import InfoBanner from './BannerContent/InfoBanner/InfoBanner';
-import Infometa from './BannerContent/Infometa/Infometa';
-import Preloader from '../Coomon/Preloader/Preloader';
 
 class ProfileStatus extends React.Component {
     state = {
         editMode: false,
-        title:'Yo'
+        status: this.props.status
     };
 
     activateEditMode = () => {
-        this.setState({ 
-          editMode: true })
+        this.setState({ editMode: true });
     };
-    
 
     deactivateEditMode = () => {
-      this.setState({ 
-        editMode: false })
-  };
-  
+        this.setState({ editMode: false });
+        this.props.updateStatus(this.state.status);
+    };
+
+    onStatusChange = (e) => {
+        this.setState({
+            status: e.currentTarget.value
+        });
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                status: this.props.status
+            });
+        }
+    }
 
     render() {
         return (
             <div>
                 {!this.state.editMode &&
                     <div>
-                        <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>
+                        <span onDoubleClick={this.activateEditMode}>{this.props.status || "No status"}</span>
                     </div>
                 }
 
                 {this.state.editMode &&
                     <div>
-                        <input autoFocus={true} onBlur={this.deactivateEditMode} value={this.props.status} />
+                        <input 
+                            onChange={this.onStatusChange} 
+                            autoFocus={true} 
+                            onBlur={this.deactivateEditMode} 
+                            value={this.state.status} 
+                        />
                     </div>
                 }
             </div>

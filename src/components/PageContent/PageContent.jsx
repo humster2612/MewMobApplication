@@ -6,11 +6,10 @@ import Infometa from './BannerContent/Infometa/Infometa';
 import Preloader from '../Coomon/Preloader/Preloader';
 import ProfileStatus from './ProfileStatus';
 
-const PageContent = ({ profile }) => {
+const PageContent = ({ profile, status, updateStatus }) => {
   if (!profile || !profile.photos || !profile.photos.large) {
     return <Preloader />;
   }
-
   return (
     <div className={s.addwrapper}>
       <div className={s.bannerback}>
@@ -19,7 +18,7 @@ const PageContent = ({ profile }) => {
         <Infometa />
       </div>
       <img src={profile.photos.large} alt="Profile" />
-      <ProfileStatus status={"hello privet "} />
+      <ProfileStatus status={status} updateStatus={updateStatus} />
     </div>
   );
 };

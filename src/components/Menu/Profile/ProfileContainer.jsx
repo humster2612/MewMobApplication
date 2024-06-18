@@ -1,33 +1,36 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setUsersProfile } from '../../../redux/Profile-reducer';
+import { setUsersProfile, getStatus, updateStatus } from '../../../redux/Profile-reducer';
 import Profile from '../Profile/Profile';
-import axios from 'axios';
 import { compose } from 'redux';
+import { profileAPI } from '../../../assets/images/api/api'; // Добавьте этот импорт
 
-const ProfileContainer = ({ profile, setUsersProfile }) => {
+const ProfileContainer = ({ profile, setUsersProfile, status, getStatus, updateStatus }) => {
   const { userId } = useParams();
 
   useEffect(() => {
     if (userId) {
-      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
+      profileAPI.getProfile(userId)
         .then(response => {
           setUsersProfile(response.data);
         })
         .catch(error => {
           console.error("Error fetching profile data:", error);
         });
-    }
-  }, [userId, setUsersProfile]);
 
-  return <Profile profile={profile} />;
+      getStatus(userId);
+    }
+  }, [userId, setUsersProfile, getStatus]);
+
+  return <Profile profile={profile} status={status} updateStatus={updateStatus} />;
 };
 
 const mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
+  status: state.profilePage.status,
 });
 
 export default compose(
-  connect(mapStateToProps, { setUsersProfile }),
+  connect(mapStateToProps, { setUsersProfile, getStatus, updateStatus }),
 )(ProfileContainer);

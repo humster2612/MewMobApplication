@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { follow, unfollow, getUsers, setCurrentPage, togleFollowingProgress } from '../../redux/Users-reducer';
+import { follow, unfollow, getUsers, setCurrentPage, toggleFollowingProgress } from '../../redux/Users-reducer';
 import Users from './Users';
 import Preloader from '../Coomon/Preloader/Preloader';
 import { withAuthRedirect } from '../../Hoc/withAuthRedirect';
@@ -49,15 +49,13 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default compose (
+export default compose(
     withAuthRedirect,
     connect(mapStateToProps, {
         follow,
         unfollow,
         getUsers,
         setCurrentPage,
-        togleFollowingProgress,
-    }) )(UsersAPIComponent);
-
-    
-
+        toggleFollowingProgress,
+    })
+)(UsersAPIComponent);

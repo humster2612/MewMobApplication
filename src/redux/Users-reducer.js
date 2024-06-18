@@ -1,4 +1,5 @@
 import { followAPI } from "../assets/images/api/api";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
@@ -57,7 +58,7 @@ export const setUsersTotalCount = (totalUsersCount) => ({
     type: SET_TOTAL_USERS_COUNT, totalUsersCount
 });
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
-export const togleFollowingProgress = (isFetching, userId) => ({
+export const toggleFollowingProgress = (isFetching, userId) => ({
     type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId
 });
 
@@ -76,29 +77,29 @@ export const getUsers = (pageNumber, pageSize) => async (dispatch) => {
 };
 
 export const follow = (userId) => async (dispatch) => {
-    dispatch(togleFollowingProgress(true, userId));
+    dispatch(toggleFollowingProgress(true, userId));
     try {
         const response = await followAPI.follow(userId);
         if (response.data.resultCode === 0) {
             dispatch(followSuccess(userId));
         }
-        dispatch(togleFollowingProgress(false, userId));
+        dispatch(toggleFollowingProgress(false, userId));
     } catch (error) {
-        dispatch(togleFollowingProgress(false, userId));
+        dispatch(toggleFollowingProgress(false, userId));
         console.error("There was an error following the user!", error);
     }
 };
 
 export const unfollow = (userId) => async (dispatch) => {
-    dispatch(togleFollowingProgress(true, userId));
+    dispatch(toggleFollowingProgress(true, userId));
     try {
         const response = await followAPI.unfollow(userId);
         if (response.data.resultCode === 0) {
             dispatch(unfollowSuccess(userId));
         }
-        dispatch(togleFollowingProgress(false, userId));
+        dispatch(toggleFollowingProgress(false, userId));
     } catch (error) {
-        dispatch(togleFollowingProgress(false, userId));
+        dispatch(toggleFollowingProgress(false, userId));
         console.error("There was an error unfollowing the user!", error);
     }
 };
