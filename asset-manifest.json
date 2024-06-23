@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/NewMobApplication%20/static/css/main.0a20bcda.css",
-    "main.js": "/NewMobApplication%20/static/js/main.849fc5a3.js",
-    "static/js/453.4d2098ef.chunk.js": "/NewMobApplication%20/static/js/453.4d2098ef.chunk.js",
-    "index.html": "/NewMobApplication%20/index.html",
-    "main.0a20bcda.css.map": "/NewMobApplication%20/static/css/main.0a20bcda.css.map",
-    "main.849fc5a3.js.map": "/NewMobApplication%20/static/js/main.849fc5a3.js.map",
-    "453.4d2098ef.chunk.js.map": "/NewMobApplication%20/static/js/453.4d2098ef.chunk.js.map"
+    "main.css": "/humster2612/appProjectReact.git/static/css/main.962801a3.css",
+    "main.js": "/humster2612/appProjectReact.git/static/js/main.108cd06a.js",
+    "index.html": "/humster2612/appProjectReact.git/index.html",
+    "main.962801a3.css.map": "/humster2612/appProjectReact.git/static/css/main.962801a3.css.map",
+    "main.108cd06a.js.map": "/humster2612/appProjectReact.git/static/js/main.108cd06a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a20bcda.css",
-    "static/js/main.849fc5a3.js"
+    "static/css/main.962801a3.css",
+    "static/js/main.108cd06a.js"
   ]
 }
