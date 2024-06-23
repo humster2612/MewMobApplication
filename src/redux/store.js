@@ -1,5 +1,5 @@
-import Dialogsreducer from "./Dialogs-reducer";
-import ProfileReducer from "./Profile-reducer";
+import Dialogsreducer from "./Dialogs-reducer.ts";
+import ProfileReducer from "./Profile-reducer.ts";
 
 // const ADD_POST = 'ADD-POST';
 // const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';

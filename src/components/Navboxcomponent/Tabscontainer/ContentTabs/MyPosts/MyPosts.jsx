@@ -1,6 +1,30 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import { Field, reduxForm } from 'redux-form';
+import { maxLengthCreator, required } from '../../../../../Utils/validators';
+
+const maxLength10 = maxLengthCreator(10);
+
+let AddNewPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={s.postForm}>
+            <div>
+                <Field
+                    name="newPostText"
+                    component="textarea"
+                    placeholder="Post message"
+                    validate={[required, maxLength10]}
+                />
+            </div>
+            <div>
+                <button type="submit" className={s.addButton}>Add Post</button>
+            </div>
+        </form>
+    );
+};
+
+AddNewPostForm = reduxForm({ form: "ProfileAddNewPostForm" })(AddNewPostForm);
 
 const MyPosts = (props) => {
     const postsElements = props.posts.map(p => (
@@ -17,30 +41,16 @@ const MyPosts = (props) => {
         </div>
     ));
 
-    const newPostElement = React.createRef();
-
-    const onAddPost = () => {
-            props.addPost();
-        
-    };
-
-    const onPostChange = () => {
-        const text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    const addNewPost = (values) => {
+        if (values.newPostText.length <= 10) {
+            props.addPost(values.newPostText);
+        }
     };
 
     return (
         <div className={s.postBlock}>
             <label className={s.label}>Add your comment</label>
-            <input
-                className={s.input}
-                type="text"
-                onChange={onPostChange}
-                ref={newPostElement}
-                value={props.newPostText}
-                placeholder="Enter your comment"
-            />
-            <button className={s.addButton} onClick={onAddPost}>Add Post</button>
+            <AddNewPostForm onSubmit={addNewPost} />
             <div className={s.posts}>{postsElements}</div>
         </div>
     );

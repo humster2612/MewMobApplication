@@ -5,7 +5,8 @@
 }
 
 body {
-  background: white;
+  position: relative;
+  background:#cdd4db ;
 }
 
 .container {

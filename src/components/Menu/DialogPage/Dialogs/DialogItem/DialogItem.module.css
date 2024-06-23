@@ -1,0 +1,26 @@
+.dialog {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.textD{
+    font-size: 30px;
+}
+
+.dialog img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    flex: 1; /* Занимает всё доступное пространство в строке */
+    white-space: nowrap; /* Запрещает перенос текста на новую строку */
+    overflow: hidden; /* Скрытие текста, выходящего за пределы контейнера */
+    text-overflow: ellipsis; /* Обрезание текста с добавлением многоточия */
+    margin-right: 10px; /* Добавление отступа справа для разделения текста и ссылки */
+}
+

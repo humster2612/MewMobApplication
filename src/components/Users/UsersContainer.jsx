@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { follow, unfollow, getUsers, setCurrentPage, toggleFollowingProgress } from '../../redux/Users-reducer';
-import Users from './Users';
-import Preloader from '../Coomon/Preloader/Preloader';
-import { withAuthRedirect } from '../../Hoc/withAuthRedirect';
+import { follow, unfollow, getUsers, setCurrentPage, toggleFollowingProgress } from '../../redux/Users-reducer.ts';
+import Users from './Users.jsx';
+import Preloader from '../Coomon/Preloader/Preloader.js';
+import { withAuthRedirect } from '../../Hoc/withAuthRedirect.js';
 import { compose } from 'redux';
 
 class UsersAPIComponent extends Component {

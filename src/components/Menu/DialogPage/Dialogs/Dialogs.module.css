@@ -1,119 +1,81 @@
-.containerthree {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрируем содержимое по горизонтали */
-    width: 100%;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.274);
-    overflow: hidden; /* Скрываем содержимое, если оно не помещается в контейнер */
-    padding: 0px 0px 30px 0px ;
-}
-
-
-
 .dialogs {
     display: flex;
-    flex-direction: row; /* Располагаем имена и сообщения по горизонтали */
-    width: 100%;
-  
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px auto;
+  /* margin: auto; */
+  margin-bottom: 280px;
 }
 
-.dialogsItems, .messages {
-    background-color: #cfdaec; /* Цвет фона */
-    border: 1px solid #094d74; /* Тонкая серая обводка */
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0; /* Убираем отступы между блоками */
-    max-height: 300px; /* Ограничение высоты блоков */
-    overflow-y: auto; /* Включаем вертикальную прокрутку, если содержимое не помещается */
+.textD{
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .dialogsItems {
-    flex-grow: 1; /* Установим большее значение flex-grow для колонки с именами */
-    height: auto;
+    width: 30%;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .messages {
-    flex-grow: 2; /* Установим меньшее значение flex-grow для колонки с сообщениями */
-    
-}
-
-.dialogsItems .active {
-    color: gold;
-}
-
-.message {
-    background-color: #d5e8d4; /* Цвет фона сообщения */
-    border: 1px solid #c8e5bc; /* Обводка сообщения */
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0; /* Убираем отступы между сообщениями */
-    align-self: flex-start; /* Выравниваем сообщения к верху колонки */
-    
-}
-
-.avatarAndName {
+    width: 65%;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center; /* Выравниваем элементы по вертикали */
-    padding: 5px;
+    flex-direction: column;
 }
 
-.avatar {
-    width: 40px; /* Задаем ширину аватарки */
-    height: 40px; /* Задаем высоту аватарки */
-    border-radius: 50%; /* Округляем углы, чтобы создать круглую форму */
-    margin-right: 10px; /* Добавляем отступ справа от аватарки */
-}
-
-
-
-
-.fieldformesssage{
-    padding: 20px 0px 0px 0px;
-    display: block;
-    margin-bottom: 0.25rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: left;
-    font-size: 13px;
-    color: #333;
-    text-transform: capitalize;
-  
-
-}
-
-  
-  .input {
-    display: block;
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    border: 1px solid #094d74;
-    background: #cfdaec;
-    color: #094d74;
-    font-size: 0.9rem;
-    font-family: 'Raleway', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .addButton {
-    margin-top: auto; 
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    border: 1px solid #094d74;
-    background: #cfdaec;
-    color: #094d74;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+.dialog {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     cursor: pointer;
-  }
-  
-  @media (max-width: 767px) {
-    .postBlock {
-      padding: 1rem; 
-    
-    }
-  }
-  
+}
+
+.dialog img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dialog.active {
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

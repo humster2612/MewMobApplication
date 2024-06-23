@@ -4,12 +4,12 @@ import BannerContent from './BannerContent/BannerContent';
 import InfoBanner from './BannerContent/InfoBanner/InfoBanner';
 import Infometa from './BannerContent/Infometa/Infometa';
 import Preloader from '../Coomon/Preloader/Preloader';
-import ProfileStatus from './ProfileStatus';
+// import ProfileStatus from './ProfileStatus';
 
-const PageContent = ({ profile, status, updateStatus }) => {
-  if (!profile || !profile.photos || !profile.photos.large) {
-    return <Preloader />;
-  }
+const PageContent = ({ profile, updateStatus }) => {
+  // if (!profile || !profile.photos || !profile.photos.large) {
+  //   return <Preloader />;
+  // }
   return (
     <div className={s.addwrapper}>
       <div className={s.bannerback}>
@@ -17,8 +17,8 @@ const PageContent = ({ profile, status, updateStatus }) => {
         <InfoBanner />
         <Infometa />
       </div>
-      <img src={profile.photos.large} alt="Profile" />
-      <ProfileStatus status={status} updateStatus={updateStatus} />
+      {/* <img src={profile.photos.large} alt="Profile" />
+      <ProfileStatus status={status} updateStatus={updateStatus} /> */}
     </div>
   );
 };

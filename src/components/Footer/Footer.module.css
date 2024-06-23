@@ -1,80 +1,32 @@
-/* .footer{
-    background-color: #759cd8;
-    width: 100%;
-    height: 100%;
-}
-.footer img{
-    width: 100px;
-    height: 100px;
-    
-} */
-
-
-/* Footer.module.css */
-
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: #cfdaec;
+    color: black;
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position:static;
+    left: 0;
+    bottom: 0;
+
+    
+
+    /* position: absolute; Фиксированная позиция */
+    /* bottom: 0; Прижимаем к нижнему краю */
+    /* left: 0; Выравниваем по левому краю */
+    /* width: 100%; Занимает всю ширину экрана */
+    /* z-index: 1000; Устанавливаем z-index для footer, чтобы он был поверх других элементов */
 }
 
-.columnIcTeFooter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
 .iconFooter img {
-    max-width: 100%;
+    max-width: 50px; /* Уменьшаем размер изображения */
     height: auto;
 }
 
 .textFooter {
-    margin-top: 10px;
     text-align: center;
-    max-width: 300px;
+    max-width: 70%;
 }
-
-.columnSitesFooter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.columnSitesFooter > div {
-    margin: 10px 0;
-}
-
-/* Стили для больших экранов */
-@media (min-width: 768px) {
-    .footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .columnIcTeFooter {
-        margin-bottom: 0;
-        align-items: flex-start;
-    }
-
-    .textFooter {
-        text-align: left;
-    }
-
-    .columnSitesFooter {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .columnSitesFooter > div {
-        margin: 0 20px;
-    }
-}
-

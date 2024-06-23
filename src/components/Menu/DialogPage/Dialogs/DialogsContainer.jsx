@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import Dialogs from './Dialogs';
-import { addMessageActionCreator, updateNewMessageActionCreator } from '../../../../redux/Dialogs-reducer';
+import { addMessageActionCreator, updateNewMessageActionCreator } from '../../../../redux/Dialogs-reducer.ts'; // исправленный импорт
 import { withAuthRedirect } from '../../../../Hoc/withAuthRedirect';
 import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
   return {
     diaPage: state.diaPage,
-    isAuth:state.auth.isAuth
-
+    isAuth: state.auth.isAuth
   };
 };
 
@@ -23,12 +22,7 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-
-
-
-
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   withAuthRedirect
-  ) (Dialogs);
-
+)(Dialogs);

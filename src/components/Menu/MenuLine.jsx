@@ -11,10 +11,6 @@ const MenuLine = () => {
             </div>
 
             <div className={s.item}>
-                <Link to="/aboutus">About us</Link>
-            </div>
-
-            <div className={s.item}>
                 <Link to="/dialogs">DialogPage</Link> 
             </div>
 

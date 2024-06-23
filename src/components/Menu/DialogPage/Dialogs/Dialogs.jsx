@@ -1,67 +1,86 @@
-import React, { useRef } from 'react';
-import { Navigate } from 'react-router-dom';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom'; // Используем Navigate вместо Redirect
+import { addMessageActionCreator, updateNewMessageActionCreator, setActiveDialogActionCreator } from '../../../../redux/Dialogs-reducer.ts';
 import s from './Dialogs.module.css';
-import DialogItem from './DialogItem/DialogItem';
-import Message from './Message/Message';
+import DialogItem from '../Dialogs/DialogItem/DialogItem.jsx';
+import Message from '../Dialogs/Message/Message.jsx';
+import { withAuthRedirect } from '../../../../Hoc/withAuthRedirect.js';
+import { compose } from 'redux'; // Импортируем compose для композиции HOC
 
-const Dialogs = (props) => {
-    const state = props.diaPage;
+const Dialogs = ({ diaPage, updateNewMessage, addMessage, setActiveDialog, isAuth }) => {
+    if (!isAuth) {
+        return <Navigate to="/login" />;
+    }
 
-    const dialogsElements = state.dialogsData.map(d => (
-        <div className={s.dialogItem} key={d.id}>
-            <div className={s.avatarAndName}>
-                <img
-                    alt=""
-                    className={s.avatar}
-                    src={d.avatarUrl}
-                />
-                <DialogItem name={d.name} key={d.id} id={d.id} />
-            </div>
-        </div>
-    ));
+    const { dialogsData, messageData, newMessageAdd, activeDialogId } = diaPage;
 
-    const messagesElements = state.messageData.map(m => (
-        <Message message={m.message} key={m.id} id={m.id} />
-    ));
-
-    let newMessageAdd = useRef();
-
-    const addMessage = () => {
-        props.addMessage();
+    const onDialogClick = (dialogId) => {
+        setActiveDialog(dialogId);
     };
 
-    const sendMessage = (e) => {
-        const text = e.target.value;
-        props.updateNewMessage(text);
+    const onSendMessageClick = () => {
+        addMessage();
     };
 
-    if (!props.isAuth) return <Navigate to="/login" />;
+    const onMessageChange = (e) => {
+        updateNewMessage(e.target.value);
+    };
+
+    const activeMessages = messageData.filter(msg => msg.dialogId === activeDialogId);
 
     return (
-        <div className={s.containerthree}>
-            <div className={s.dialogs}>
-                <div className={s.dialogsItems}>
-                    {dialogsElements}
-                </div>
-                <div className={s.messages}>
-                    {messagesElements}
-                    <div className={s.postBlock}>
-                        <div className={s.fieldformesssage}>
-                            <input
-                                className={s.input}
-                                type="text"
-                                onChange={sendMessage}
-                                ref={newMessageAdd}
-                                value={state.newMessageAdd}
-                                placeholder="Enter your comment"
-                            />
-                            <button className={s.addButton} onClick={addMessage}>Send Message</button>
+        <div>
+        <div className={s.textD}>
+        Dialogs
+   </div>
+        <div className={s.dialogs}>
+            
+            <div className={s.dialogsItems}>
+                {dialogsData.map(dialog => (
+                    <div key={dialog.id} onClick={() => onDialogClick(dialog.id)}>
+                        <DialogItem name={dialog.name} id={dialog.id} avatarUrl={dialog.avatarUrl} />
+                    </div>
+                ))}
+            </div>
+            <div className={s.messages}>
+                {activeMessages.map(msg => (
+                    <Message key={msg.id} message={msg.message} />
+                ))}
+                {activeDialogId && (
+                    <div>
+                        <div>
+                            <textarea value={newMessageAdd} onChange={onMessageChange} />
+                        </div>
+                        <div>
+                            <button onClick={onSendMessageClick}>Send</button>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
+        </div>
         </div>
     );
 };
 
-export default Dialogs;
+const mapStateToProps = (state) => ({
+    diaPage: state.diaPage,
+    isAuth: state.auth.isAuth
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    updateNewMessage: (text) => {
+        dispatch(updateNewMessageActionCreator(text));
+    },
+    addMessage: () => {
+        dispatch(addMessageActionCreator());
+    },
+    setActiveDialog: (dialogId) => {
+        dispatch(setActiveDialogActionCreator(dialogId));
+    }
+});
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthRedirect
+)(Dialogs);

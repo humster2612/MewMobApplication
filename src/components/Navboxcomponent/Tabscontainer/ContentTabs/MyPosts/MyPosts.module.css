@@ -1,50 +1,49 @@
-/* MyPosts.module.css */
-
 .postBlock {
-  margin: 0rem auto;
+  margin: 0 auto;
   padding: 1rem;
   max-width: 25rem;
-  text-align:start;
+  text-align: center; /* Центрирование текста и элементов */
   border-radius: 6px;
-  /* background: linear-gradient(#230736, #301247); */
-  box-shadow: 0 0 8px rgba(0,0,0,0.3); 
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); 
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center; /* Центрирование элементов по горизонтали */
+  background: #f9f9f9;
 }
 
-.label{
+.label {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  /* letter-spacing: 0.1rem; */
   font-weight: 700;
   text-align: left;
-  font-size: 13px;
+  font-size: 14px;
   color: #333;
-  text-transform: capitalize;
-
-
 }
 
-.input {
+.postForm {
+  width: 100%; /* Устанавливаем ширину формы */
+}
+
+.postForm textarea {
   display: block;
-  width: 100%;
-  padding: 0.5rem;
+  width: 100%; /* Занимает всю ширину блока */
+  height: 50px; /* Уменьшена высота */
+  padding: 0.75rem;
   margin-bottom: 1rem;
   border-radius: 4px;
-  border: 1px solid #493066;
-  /* background: #493664; */
-  color: #e5d9f1;
-  font-size: 0.9rem;
+  border: 1px solid #d3d3d3;
+  background: #fff;
+  color: #333;
+  font-size: 1rem;
   font-family: 'Raleway', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  resize: none;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .addButton {
-  margin-top: auto; /* Push the button to the bottom */
+  margin-top: auto;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
   border: 1px solid #493066;
@@ -57,38 +56,33 @@
 
 @media (max-width: 767px) {
   .postBlock {
-    padding: 1rem; /* Reduce padding for smaller screens */
+    padding: 1rem;
   }
 }
-
-
 
 .commentWrapper {
   margin-top: 20px;
   display: flex;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   border: 1px solid #e5d9f1;
- padding: 5px;
- width: 100%;
- border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  max-height: 50px; /* Уменьшена высота */
+  border-radius: 10px;
+  background: #fff;
 }
 
 .userIcon {
- 
-  margin-right: 5px; 
+  margin-right: 10px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  color: #333; 
 }
 
-.nameUser{
-  font-size: 9px;
+.nameUser {
+  font-size: 12px;
   color: #333;
-  text-transform: capitalize;
-
 }
-
 
 .commentContent {
   display: flex;
